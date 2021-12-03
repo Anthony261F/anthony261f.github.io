@@ -1,0 +1,71 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 16px;
+  position: relative;
+}
+.titre,
+.titrejeux,
+.textefrimousse,
+.titremuffin,
+.textemuffin,
+.lien {
+  z-index: 1;
+  font-family: "Anton", sans-serif;
+}
+.titre {
+  color: rgb(60, 255, 0);
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+.titrejeux {
+  color: rgb(60, 255, 0);
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+.titreskin {
+  color: rgb(0, 4, 255);
+  font-size: 26px;
+  text-transform: uppercase;
+}
+.titremuffin {
+color: rgb(255, 255, 255);
+font-size: 6rem;
+text-transform: uppercase;
+}
+.textemuffin {
+  color: rgb(0, 195, 255);
+  font-size: 6rem;
+  font-size: 20px;
+}
+.textefrimousse {
+  color: rgb(255, 217, 0);
+  font-size: 6rem;
+  font-size: 20px;
+  }
+.lien {
+  text-decoration: none;
+  color: rgb(0, 255, 221);
+  padding: 0.5rem 1rem;
+  background-color: teal;
+}
+.fond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.menu {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
