@@ -47,6 +47,11 @@ text-transform: uppercase;
   font-size: 6rem;
   font-size: 20px;
   }
+  .texteinfo {
+    color: rgb(0, 0, 0);
+    font-size: 6rem;
+    font-size: 20px;
+    }
 .lien {
   text-decoration: none;
   color: rgb(0, 255, 221);
