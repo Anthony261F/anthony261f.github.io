@@ -46,10 +46,10 @@ nav a:hover{
 .sous{
     display: none;
     box-shadow: 0px 1px 2px 
-    background-color: rgb (0, 255, 221);
     position: absolute;
     width: 100%;
     z-index: 1000;
+    background-color:teal;
 }
 nav > ul li:hover .sous{
     display: block;
