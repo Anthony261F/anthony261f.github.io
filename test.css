@@ -49,7 +49,7 @@ nav a:hover{
     position: absolute;
     width: 100%;
     z-index: 1000;
-    background-color:teal;
+    background-color: teal;
 }
 nav > ul li:hover .sous{
     display: block;
