@@ -33,20 +33,20 @@ nav ul::after{
 nav a{
     display: block;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 255, 221);
     border-bottom: 2px solid transparent;
     padding: 10px 0px;
 }
 
 nav a:hover{
-    color: rgb(0, 132, 255);
+    color: rgb(217, 255, 0);
     border-bottom: 2px solid gold;
 }
 
 .sous{
     display: none;
     box-shadow: 0px 1px 2px rgb(255, 255, 255);
-    background-color:rgb(140, 238, 255);
+    background-color:teal;
     position: absolute;
     width: 100%;
     z-index: 1000;
@@ -75,5 +75,5 @@ nav > ul li:hover .sous{
 .conteneur{
   margin: 50px 20px;
   height: 1500px;
-  background-color:rgb(255, 255, 255);
+  background-color:teal;
 }
