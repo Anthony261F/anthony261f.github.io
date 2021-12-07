@@ -45,8 +45,8 @@ nav a:hover{
 
 .sous{
     display: none;
-    box-shadow: 0px 1px 2px rgb(255, 255, 255);
-
+    box-shadow: 0px 1px 2px 
+    background-color: rgb (0, 255, 221);
     position: absolute;
     width: 100%;
     z-index: 1000;
@@ -65,7 +65,7 @@ nav > ul li:hover .sous{
 }
 .sous a:hover{
     border-bottom: none;
-    background-color: RGBa(200,200,200,0.1);
+    background-color: rgb (200,200,200,0.1);
 }
 .deroulant > a::after{
     content:" ▼";
@@ -76,5 +76,4 @@ nav > ul li:hover .sous{
 .conteneur{
   margin: 50px 20px;
   height: 1500px;
-  background-color:teal;
 }
