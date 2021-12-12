@@ -77,3 +77,7 @@ nav > ul li:hover .sous{
   margin: 50px 20px;
   height: 1500px;
 }
+
+body{
+background-image: url(globe.gif);
+}
