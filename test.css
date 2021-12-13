@@ -45,12 +45,14 @@ nav a:hover{
 
 .sous{
     display: none;
-    box-shadow: 0px 1px 2px 
-    position: absolute;
+      
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
+    position: absolute;
     background-color: teal;
+    box-shadow: 0px 1px 2px 
 }
+  
 nav > ul li:hover .sous{
     display: block;
 }
