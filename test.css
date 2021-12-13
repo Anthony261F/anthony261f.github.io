@@ -71,6 +71,7 @@ nav > ul li:hover .sous{
     content:" ▼";
     font-size: 12px;
     background-color:teal;
+    position: fixed;
 }
 
 .conteneur{
