@@ -67,7 +67,7 @@ nav > ul li:hover .sous{
 }
 .sous a:hover{
     border-bottom: none;
-    background-color: rgb (200,200,200,0.1);
+    background-color: rgb(255, 255, 255);
 }
 .deroulant > a::after{
     content:" ";
