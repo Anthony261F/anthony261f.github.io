@@ -9,6 +9,8 @@
   position: relative;
 }
 .titre,
+.titreun,
+.titredeux,
 .titrejeux,
 .textefrimousse,
 .titremuffin,
@@ -46,6 +48,16 @@
 .titremuffin {
 color: rgb(255, 255, 255);
 font-size: 6rem;
+text-transform: uppercase;
+}
+.titreun {
+color: rgb(140, 0, 255);
+font-size: 6rem;
+text-transform: uppercase;
+}
+.titredeux {
+color: rgb(255, 255, 255);
+font-size: 4rem;
 text-transform: uppercase;
 }
 .textemuffin {
