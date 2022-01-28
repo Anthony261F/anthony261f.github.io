@@ -15,6 +15,7 @@
 .textemuffin,
 .texteinfo,
 .texteavent,
+.racouciavent,
 .lien {
   z-index: 1;
   font-family: "Anton", sans-serif;
@@ -67,6 +68,12 @@ text-transform: uppercase;
   color: rgb(0, 255, 221);
   padding: 0.5rem 1rem;
   background-color: teal;
+}
+.racouciavent {
+  text-decoration: none;
+  color: rgb(98, 0, 255);
+  padding: 0.5rem 1rem;
+  background-color: rgb(243, 227, 8);
 }
 .fond {
   position: absolute;
