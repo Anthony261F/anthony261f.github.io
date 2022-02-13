@@ -18,6 +18,8 @@
 .texteinfo,
 .texteavent,
 .racouciavent,
+.titre1mdg,
+.titre2mdg,
 .lien {
   z-index: 1;
   font-family: "Anton", sans-serif;
@@ -50,9 +52,19 @@ color: rgb(255, 255, 255);
 font-size: 6rem;
 text-transform: uppercase;
 }
-.titreun {
-color: rgb(140, 0, 255);
+.titre1mdg {
+color: rgb(255, 0, 0);
 font-size: 6rem;
+text-transform: uppercase;
+}
+.titre2mdg {
+color: rgb(255, 0, 0);
+font-size: 6rem;
+text-transform: uppercase;
+}
+.titreun {
+color: rgb(0, 255, 191);
+font-size: 4rem;
 text-transform: uppercase;
 }
 .titredeux {
@@ -89,6 +101,14 @@ text-transform: uppercase;
 }
 .fond {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.back {
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
