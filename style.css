@@ -53,18 +53,18 @@ font-size: 6rem;
 text-transform: uppercase;
 }
 .titre1mdg {
-color: rgb(255, 0, 0);
-font-size: 6rem;
-text-transform: uppercase;
+  color: rgb(255, 0, 0);
+  font-size: 6rem;
+  text-transform: uppercase;
 }
 .titre2mdg {
-color: rgb(255, 0, 0);
-font-size: 6rem;
-text-transform: uppercase;
+  color: rgb(0, 238, 255);
+  font-size: 4rem;
+  text-transform: uppercase;
 }
 .titreun {
-color: rgb(0, 255, 191);
-font-size: 4rem;
+color: rgb(140, 0, 255);
+font-size: 6rem;
 text-transform: uppercase;
 }
 .titredeux {
@@ -92,6 +92,17 @@ text-transform: uppercase;
   color: rgb(0, 255, 221);
   padding: 0.5rem 1rem;
   background-color: teal;
+}
+.lien2 {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 255, 255);
+}
+.lien3 {
+  text-decoration: none;
+  color: rgb(255, 208, 0);
+  padding: 0.5rem 1rem;
 }
 .racouciavent {
   text-decoration: none;
