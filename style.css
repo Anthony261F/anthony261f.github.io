@@ -20,9 +20,18 @@
 .racouciavent,
 .titre1mdg,
 .titre2mdg,
-.lien {
+.lien,
+.dashboard {
   z-index: 1;
   font-family: "Anton", sans-serif;
+}
+.dashboard {
+  text-decoration: none;
+  color: rgb(0, 255, 221);
+  padding: 0.5rem 1rem;
+  background-color: teal;
+  position:absolute;
+  right: 35px;
 }
 .titre {
   color: rgb(60, 255, 0);
