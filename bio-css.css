@@ -1,0 +1,13 @@
+.container {
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 65%;
+    height: auto!important;
+    margin-top: 7%;
+}
+.container_body {
+    padding: 40px 0 35px 175px;
+    color: black;
+    display: flex;
+}
