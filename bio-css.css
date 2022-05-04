@@ -11,3 +11,10 @@
     color: black;
     display: flex;
 }
+.container_head {
+    padding: 10px 0 10px 10px;
+    color: black;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
