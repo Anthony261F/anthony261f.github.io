@@ -1,6 +1,6 @@
 .container {
-    background-color: white;
-    border: 3px solid white;
+    background-color: rgb(27, 21, 21);
+    border: 3px solid rgb(27, 21, 21);
     border-radius: 20px;
     width: 65%;
     height: auto!important;
