@@ -21,6 +21,7 @@
 .titre1mdg,
 .titre2mdg,
 .lien,
+.lienbas,
 .dashboard {
   z-index: 1;
   font-family: "Anton", sans-serif;
@@ -101,6 +102,13 @@ text-transform: uppercase;
   color: rgb(0, 255, 221);
   padding: 0.5rem 1rem;
   background-color: teal;
+}
+.lienbas {
+  text-decoration: none;
+  color: rgb(0, 255, 221);
+  padding: 0.5rem 1rem;
+  background-color: teal;
+  position:unset;
 }
 .lien2 {
   text-decoration: none;
