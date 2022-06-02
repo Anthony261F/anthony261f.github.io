@@ -8,12 +8,12 @@
 }
 .container_body {
     padding: 40px 0 35px 175px;
-    color: black;
+    color: rgb(255, 255, 255);
     display: flex;
 }
 .container_head {
     padding: 10px 0 10px 10px;
-    color: black;
+    color: rgb(255, 255, 255);
     display: flex;
     position: relative;
     align-items: center;
