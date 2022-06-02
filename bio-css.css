@@ -13,6 +13,8 @@
     font-size: 16px;
     position: relative;
     padding: 0.5rem 1rem;
+    top: 35px;
+    left: 45px;
 }
 .container_body {
     padding: 40px 0 35px 175px;
