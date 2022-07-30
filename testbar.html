@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>ProgressBar</title>
+</head>
+<body>
+    <div id="ProgressBar1" name="ProgressBar1" max="100" value="0" onchange="document.title = ('Le nouveau pourcentage est:' + this.layer.style.width)" style="height: 15px; width: 250px; border: 1px solid #000000;"></div>
+    <input type="button" onclick="p.Value(p.Value() + 10)" value="Augmenter" />
+    <input type="button" onclick="p.Value(p.Value() - 10)" value="Diminuer" />
+    
+    <script type="text/javascript">
+    progressBar=function(progressBarNode) {
+        var p=progressBarNode;
+        p.input=document.createElement("input");
+        p.input.type="hidden";
+        p.input.name=p.getAttribute("name");
+        p.layer=document.createElement("div");
+        p.layer.style.backgroundColor="blue";
+        p.layer.style.height="100%";
+        p.layer.style.width="0%";
+        p.appendChild(p.input);
+        p.appendChild(p.layer);
+        p._onchange=function() {
+            var newTaille=((this.Value()*100)/this.Max());
+            this.layer.style.width=newTaille+"%";
+            try {
+                this.OnChange();
+            } catch (ex) {}
+        }
+        p.OnChange=function() {
+            eval(this.getAttribute("onchange"));
+        }
+        p.Max=function(value) {
+            if (value || value==0) { // SET
+                this.setAttribute("max", value);
+                this._onchange();
+            } else { // GET
+                return parseInt(this.getAttribute("max"));
+            }
+        }
+        p.Value=function(value) {
+            if (value || value==0) { // SET
+                value=parseInt(value);
+                if (value < 0) {value=0;}
+                if (value > this.Max()) {value=this.Max();}
+                this.setAttribute("value", value);
+                this.input.setAttribute("value", value);
+                this._onchange();
+            } else { // GET
+                return parseInt(this.getAttribute("value"));
+            }
+        }
+        p._onchange();
+        return p;
+    }
+    var p=progressBar(document.getElementById("ProgressBar1"));
+    p.Value(10);
+    </script>
+</body>
+</html>
