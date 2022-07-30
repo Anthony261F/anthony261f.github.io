@@ -23,6 +23,7 @@
             <div id="progressBarControl">
                 <div id="progressBar">Pas de lecture</div>
             </div>
+            <span id="progressTime">00:00</span>
         </div>
 
         <button class="control" onclick="play('audioPlayer', this)">Play</button>
@@ -63,6 +64,40 @@
             var player = document.querySelector('#' + idPlayer);
 
             player.volume = vol;
+        }
+
+        function update(player) {
+            var duration = player.duration;
+            var time = player.currentTime;
+            var fraction = time / duration;
+            var percent = Math.ceil(fraction * 100);
+
+            var progress = document.querySelector('#progressBar');
+
+            progress.style.whdth = percent + '%';
+            progress.textContent = percent + '%';
+
+            document.querySelector('#progressTime').textContent = formatTime(time);
+        }
+
+        function formatTime(time) {
+            var hours = Math.floor(time / 3600);
+            var mins = Math.floor((time % 3600) / 60);
+            var secs = Math.floor(time % 60);
+
+            if (secs < 10) {
+                secs = "0" + secs;
+            }
+
+            if (hours) {
+                if (mins < 10) {
+                mins = "0" + mins;
+                }
+
+                return hours + ":" + mins + ":" + secs;
+            } else {
+                return mins + ":" + secs;
+            }
         }
     </script>
 
