@@ -13,18 +13,60 @@
     <link rel="icon" href="Java.png" sizes="32x32">
 </head>
 <body>
-    <div class="flex">
-        <audio id="audioPlayer">
+    <div>
+        <audio id="audioPlayer" ontimeupdate="update(this)">
             <source src="audio.ogg"></source>
             <source src="audio.mp3"></source>
         </audio>
+
+        <div>
+            <div id="progressBarControl">
+                <div id="progressBar">Pas de lecture</div>
+            </div>
+        </div>
+
+        <button class="control" onclick="play('audioPlayer', this)">Play</button>
+        <button class="control" onclick="resume('audioPlayer')">Stop</button>
+
+        <span class="volume">
+            <a class="stick1" onclick="volume('audioPlayer',0)"> 🔈 </a>
+            <a class="stick2" onclick="volume('audioPlayer',0.3)"> 🔉 </a>
+            <a class="stick3" onclick="volume('audioPlayer',0.5)"> 🔉 </a>
+            <a class="stick4" onclick="volume('audioPlayer',0.7)"> 🔊 </a>
+            <a class="stick5" onclick="volume('audioPlayer',1)"> 🔊 </a>
+        </span>
     </div>
 
     <script>
+        var player = document.querySelector('#audioPlayer');
+        player.pause();
+        player.currentTime = 0;
+        function play(idPlayer, control) {
+            var player = document.querySelector('#' + idPlayer);
 
+            if (player.paused) {
+                player.play();
+                control.textContent = 'Pause';
+            } else {
+                player.pause();
+                control.textContent = 'Play';
+            }
+        }
+
+        function resume(idPlayer) {
+            var player = document.querySelector('#' + idPlayer);
+            player.currentTime = 0; 
+            player.pause();
+        }
+
+        function volume(idPlayer, vol) {
+            var player = document.querySelector('#' + idPlayer);
+
+            player.volume = vol;
+        }
     </script>
 
-    <div class="menu">
+    <div class="flex">
         <a class="lien" href="test-js.html" title="menu">Menu</a>
         <a class="lien" href="js.html" title="liste des projet">js</a>
         <a class="lien" href="error.html" title="muffin">error</a>
