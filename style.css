@@ -155,7 +155,7 @@ text-transform: uppercase;
   z-index: -1;
 }
 .menu {
-  position: absolute;
+  position: fixed;
   top: 35px;
   left: 35px;
   width: 100%;
