@@ -168,3 +168,32 @@ text-transform: uppercase;
   background-image: url('information.jpg');
   background-size: 100%;
 }
+
+#vert {
+  color: rgb(0, 249, 25);
+}
+
+
+#bleu {
+  color: rgb(0, 166, 249);
+}
+
+#bleu-c {
+  color: rgb(2, 221, 255);
+}
+
+#bleu-f {
+  color: rgb(0, 71, 249);
+}
+
+#rouge {
+  color: rgb(249, 0, 0);
+}
+
+#orange {
+  color: rgb(249, 178, 0);
+}
+
+#jaune {
+  color: rgb(236, 249, 0);
+}
