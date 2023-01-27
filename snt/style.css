@@ -1,0 +1,166 @@
+/* Je définis  mon body. C'est dans cette section que je mettrai mon texte et mes images */
+body
+{
+	/* la largeur du body */
+	width: 100%;
+	color: black;
+/* Ici je place le background; j'en choisis un neutre car sinon je ne peux pas voir le texte */
+	background-image: url("smooth.png");
+	background-size: cover;
+	text-align: left;
+}
+
+/* Mes balises h1 et h1, je peux en créer jusqu'à h6 */
+
+
+/* Ma balise LINK pour les liens */
+a
+{
+	color: black;
+	font-weight: bold;
+	font-size:16px; 
+	/* padding: 5px 0px; */
+}
+
+
+ /* Le carré centré */
+li {
+	color: orange;
+}
+
+.center {
+	margin-top: 15% ;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.center2 {
+  display: block;
+  width: 100px;
+    margin-left: auto;
+  margin-right: auto;
+}
+ 
+ 
+/* Ma balise container qui va contenir les div nommées section */
+#container
+
+{
+
+	width: 95% ;
+	margin-left: auto ;
+	margin-right: auto ;
+}
+
+ #square
+
+{ 
+ margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+ #square2
+
+{ 
+ margin-left: auto;
+  margin-right: auto;
+  width: 200px ;
+   
+}
+
+/* Mes balises Div pour mes deux marge.  */
+ #section1
+{
+	text-align: center;
+	float:left;
+	width: 60%;
+	/* border-style: solid; */
+	
+
+	
+}
+
+
+#section2
+
+{
+text-align: center;
+		float: right;
+		width: 35%;
+	border-style: dashed;
+	height:100%;
+	margin-left:auto;
+margin-right:auto;
+color: black;
+	
+} 
+
+
+
+
+#section2 li {
+    margin: 0; 
+	padding: 0;
+}
+
+#partie {
+	height:auto;
+	border:solid;
+}
+
+
+#block-gauche {
+	text-align: center;
+		float: right;
+		width: 42%;
+	border-style: dashed;
+	height:auto;
+
+color: black;
+margin: 10px 10px;
+
+}
+
+
+#block-droite {
+	text-align: center;
+		float: left;
+		width: 42%;
+	height:auto;
+
+color: black;
+border-style: dashed;
+margin: 10px 10px;
+}
+
+
+#block-centre {
+	text-align: center;
+		float: left;
+		width: 97%;
+	height:auto;
+color: black;
+border-style: dashed;
+margin: 10px 10px;
+}
+
+#souligne {
+text-decoration: underline;
+color: red;
+}
+
+#titre {
+	text-decoration: underline;
+}
+
+#g-titre {
+text-decoration: underline;
+font-weight : bold;
+font-size: 40px;	
+}
+#roux {
+color: #f4661b;	
+}
