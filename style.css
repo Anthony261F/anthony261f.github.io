@@ -22,7 +22,14 @@
 .titre2mdg,
 .lien,
 .lienbas,
-.dashboard {
+.dashboard,
+#vert,
+#bleu,
+#bleu-f,
+#bleu-c,
+#rouge,
+#orange,
+#jaune {
   z-index: 1;
   font-family: "Anton", sans-serif;
 }
