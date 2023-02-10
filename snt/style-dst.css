@@ -76,7 +76,7 @@ li {
 {
 	text-align: center;
 	float:left;
-	width: 60%;
+	width: 100%;
 	/* border-style: solid; */
 	
 
@@ -92,6 +92,8 @@ text-align: center;
 		width: 35%;
 	border-style: dashed;
 	height:100%;
+
+	position: relative;
 	margin-left:auto;
 margin-right:auto;
 color: black;
@@ -144,6 +146,7 @@ margin: 10px 10px;
 	height:auto;
 color: black;
 border-style: dashed;
+border-color: black;
 margin: 10px 10px;
 }
 
@@ -152,15 +155,52 @@ text-decoration: underline;
 color: red;
 }
 
-#titre {
+.souligne {
+text-decoration: underline;
+color: red;
+}
+
+.titre {
 	text-decoration: underline;
 }
 
 #g-titre {
 text-decoration: underline;
 font-weight : bold;
-font-size: 40px;	
+font-size: 60px;	
 }
 #roux {
 color: #f4661b;	
+}
+
+#image {
+float:right;
+}
+
+#scroll_to_top {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  bottom: 50px;
+  right: 30px;
+  z-index: 100;
+  background-color: white;
+  border: solid;
+  width: auto;
+  height: auto;
+}
+#scroll_to_top img {
+  width: 30px;
+}
+
+#bas-page {
+	background-color: white;
+}
+
+.t-sommaire {
+	font-size: 25px;
+}
+
+#blanc {
+	color: #ffffff;
 }

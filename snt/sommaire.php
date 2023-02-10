@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="style-dst.css" />
 	<link rel="shortcut icon" href="https://ministage.lycee-dauphine.fr/images/dauphine.png" type="image/x-icon"/>
 	</head>
  
@@ -20,7 +20,7 @@
 		src="https://www.youtube.com/embed/efHWqQirbtc">
 		</iframe>
 		<div id="square">
-<a href="sommaire.php" ><img alt="SNT" class="center"   src="https://snt.lycee-dauphine.fr/css/snt.png"/>	</a>
+<a href="sommaire.php" ><img alt="SNT" class="center"   src="image-dst/snt.png"/>	</a>
 		 <img width="100" src="https://ministage.lycee-dauphine.fr/images/dauphine.png"/>				
 			</div>
 			</div>
@@ -33,9 +33,16 @@
 		
 				<br>
 		<HR>
-		Projet 2022:
-Créer un menu / érgonomiser le site / développer les pages cours
-		<HR>
+		<b>Projet 2022-2023</b><br>
+
+<li>Créer un menu </li>
+En cours de recrutement spé en classe de 2nde IO
+<li>Ergonomiser le site </li>
+En cours de recrutement spé en classe de 2nde IO 
+<li>Développer les pages de cours</li>
+Team In Progress<br>
+<span style="color: green ; font-weight: bold;">Classes de 2nde: GT2 |GT3 | GT4 | GT7</span>
+		<HR> 
 		<br> 
 		<li><a href="internet.php" >
 		Internet
@@ -65,7 +72,7 @@ Créer un menu / érgonomiser le site / développer les pages cours
 		<a target="_blank" href="https://fr.calameo.com/read/000596729eb2a8fb4dce5" >	Livre en ligne Calaméo</a>
 			<HR>
 
-		<a target="_blank" href="css/snt_2e_bo.pdf" >Le bulletin officiel</a>
+		<a target="_blank" href="snt_2e_bo.pdf" >Le bulletin officiel</a>
 			<HR>
 	
 			</div>
