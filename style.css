@@ -29,7 +29,8 @@
 #bleu-c,
 #rouge,
 #orange,
-#jaune {
+#jaune,
+#blanc {
   z-index: 1;
   font-family: "Anton", sans-serif;
 }
@@ -205,6 +206,9 @@ text-transform: uppercase;
   color: rgb(236, 249, 0);
 }
 
+#blanc {
+  color: white;
+}
 #scroll_to_top {
   position: fixed;
   width: 10px;
@@ -219,4 +223,8 @@ text-transform: uppercase;
 }
 #scroll_to_top img {
   width: 30px;
+}
+
+li {
+	color: orange;
 }
