@@ -40,7 +40,93 @@
           <h1><h1 id="base" class="titreskin">  Mélodie | Créer par AnthoNight261</h1>
         </div>
         <div class="container_body">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EV2VQZKCGVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div>
+            <audio id="audioPlayer" ontimeupdate="update(this)">
+                <source src="Mélodie _ Créer par AnthoNight261-360p.ogg"></source>
+                <source src="Mélodie _ Créer par AnthoNight261-360p.mp3"></source>
+            </audio>
+            <progress></progress> 
+            <div>
+                <div id="progressBarControl">
+                     <div id="progressBar">Pas de lecture</div>
+                </div>
+                <span id="progressTime">00:00</span>
+            </div>
+    
+            <button class="control" onclick="play('audioPlayer', this)">Play</button>
+            <button class="control" onclick="resume('audioPlayer')">Stop</button>
+    
+            <span class="volume">
+                <a class="stick1" onclick="volume('audioPlayer',0)"> 🔈 </a>
+                <a class="stick2" onclick="volume('audioPlayer',0.3)"> 🔉 </a>
+                <a class="stick3" onclick="volume('audioPlayer',0.5)"> 🔉 </a>
+                <a class="stick4" onclick="volume('audioPlayer',0.7)"> 🔊 </a>
+                <a class="stick5" onclick="volume('audioPlayer',1)"> 🔊 </a>
+            </span>
+        </div>
+    
+        <script>
+            var player = document.querySelector('#audioPlayer');
+            player.pause();
+            player.currentTime = 0;
+            function play(idPlayer, control) {
+                var player = document.querySelector('#' + idPlayer);
+    
+                if (player.paused) {
+                    player.play();
+                    control.textContent = 'Pause';
+                } else {
+                    player.pause();
+                    control.textContent = 'Play';
+                }
+            }
+    
+            function resume(idPlayer) {
+                var player = document.querySelector('#' + idPlayer);
+                player.currentTime = 0; 
+                player.pause();
+            }
+    
+            function volume(idPlayer, vol) {
+                var player = document.querySelector('#' + idPlayer);
+    
+                player.volume = vol;
+            }
+    
+            function update(player) {
+                var duration = player.duration;
+                var time = player.currentTime;
+                var fraction = time / duration;
+                var percent = Math.ceil(fraction * 100);
+    
+                var progress = document.querySelector('#progressBar');
+    
+                progress.style.whdth = percent + '%';
+                progress.textContent = percent + '%';
+    
+                document.querySelector('#progressTime').textContent = formatTime(time);
+            }
+    
+            function formatTime(time) {
+                var hours = Math.floor(time / 3600);
+                var mins = Math.floor((time % 3600) / 60);
+                var secs = Math.floor(time % 60);
+    
+                if (secs < 10) {
+                    secs = "0" + secs;
+                }
+    
+                if (hours) {
+                    if (mins < 10) {
+                    mins = "0" + mins;
+                    }
+    
+                    return hours + ":" + mins + ":" + secs;
+                } else {
+                    return mins + ":" + secs;
+                }
+            }
+        </script>
         </div>
       </div>
 
