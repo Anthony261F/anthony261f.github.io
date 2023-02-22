@@ -1,8 +1,8 @@
 .container {
     background-color: rgb(27, 21, 21);
     border: 3px solid rgb(27, 21, 21);
-    border-radius: 10px;
-    width: 87%;
+    border-radius: 25px;
+    width: 93%;
     height: auto!important;
     margin-top: 7%;
     flex-direction: column;
@@ -14,10 +14,10 @@
     position: relative;
     padding: 0.5rem 1rem;
     top: 35px;
-    left: 5%;
+    left: 2%;
 }
 .container_body {
-    padding: 40px 0 35px 175px;
+    padding: 2% 0 2% 5%;
     color: rgb(255, 255, 255);
     display: flex;
 }
