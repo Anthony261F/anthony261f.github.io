@@ -11,21 +11,108 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="bio-css.css" />
     <link rel="icon" href="icon-scratch-x32.png" sizes="32x32">
-</head>
-<body>
-  <div class="menu">
-    <a class="lien" href="index.html" title="menu">Menu</a>
-    <a class="lien" href="https://scratch.mit.edu/projects/695741413/"  target="_blank" title="jeux scratch">FootBall</a>
-    <a class="lien" href="Scratch.html" title="liste des projet">Scratch</a>
-    <a class="lien" href="PhotoMuffin.html" title="muffin">Photo Muffin</a>
-    <a class="lien" href="PhotoFrimousse.html" title="frimousse">Photo Frimousse</a>
-    <a class="lien" href="Jeux.html" title="liste jeux">Jeux</a>
-    <a class="lien" href="musique.html" title="musique">Musique</a>
-    <a class="lien" href="info.html" title="information">Information</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      a#cRetour{
+        border-radius:3px;
+        padding:10px;
+        font-size:15px;
+        text-align:center;
+        color:#fff;
+        background:rgba(0, 0, 0, 0.25);
+        position:fixed;
+        right:20px;
+        opacity:1;
+        z-index:99999;
+        transition:all ease-in 0.2s;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        text-decoration: none;
+      }
+      /* Flèche */
+      a#cRetour:before{ content: "\25b2"; }
+      a#cRetour:hover{
+        background:rgba(0, 0, 0, 1);
+        transition:all ease-in 0.2s;
+      }
+      a#cRetour.cInvisible{
+        bottom:-35px;
+        opacity:0;
+        transition:all ease-in 0.5s;
+      }
+      
+      a#cRetour.cVisible{
+        bottom:10px;
+        opacity:1;
+      }
+      
+      html,body {
+        height:100%;
+        margin:0;
+      }
+      .content {
+        height:100%;
+        min-height:100%;/*for mozilla*/
+        font-size:6em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      html>body .content {  height:auto;}
+      
+      </style>
+</head >
+<body class="is-preload" name="haut" id="haut">
+  <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+        <header id="header">
+          <div class="inner">
+
+            <!-- Logo -->
+              
+
+            <!-- Nav -->
+              <nav>
+                <ul>
+                  <li><a href="#menu">Menu</a></li>
+                </ul>
+              </nav>
+
+          </div>
+        </header>
+
+      <!-- Menu -->
+        <nav id="menu">
+          <h2 class="titre" style="text-align: center; font-size: 30px">Menu</h2>
+          <HR>
+          <div style="text-align: center;">
+            <li> <a id="blanc" href="index.html" title="Acceuil">Acceuil</a></li>
+            <li> <a id="blanc" href="https://scratch.mit.edu/projects/695741413/"  target="_blank" title="Jeux de Foot Scratch">FootBall</a>
+            <li> <a id="blanc" href="Scratch.html" title="Mes Projets Scratch">Scratch</a></li>
+            <li> <a id="blanc" href="PhotoMuffin.html" title="Photo de Muffin">Photo Muffin</a></li>
+            <li> <a id="blanc" href="PhotoFrimousse.html" title="Photo de Frimousse">Photo Frimousse</a></li>
+            <li> <a id="blanc" href="Jeux.html" title="Liste des Jeux">Jeux</a></li>
+            <li> <a id="blanc" href="musique.html" title="Mes créations Musicales">Musique</a></li>
+            <li> <a id="blanc" href="info.html" title="Information du Site">Information</a></li>
+            <HR>
+            <li> <a id="blanc" href="https://discord.gg/TNxGWbmtVf" target="_blank" title="Serveur Discord">Discord</a></li>
+          </div>
+        </nav>
+
+          <!-- Main -->
+            <div id="main">
+              <div> <!-- mettre ~ class="inner" ~ pour écart sur le coté -->
+  
+  
+  <div class="centre">
+    <h1 id="nom-page">🔢 Scratch</h1>
   </div>
-  <div id="scroll_to_top">
-    <a href="#top"><img src="flèche.png" alt="Retourner en haut" /></a>
-    <!---- Image de Flaticon.com ---->
+ 
 </div>
   <img src="scratch.png" class="fond">
   <div class="flex">
@@ -35,7 +122,7 @@
         <div class="container">
           <div class="container_head">
             <img src="logo-scratch.png" width="55" height="55">
-            <h1> FootBall</h1>
+            <h1 id="blanc"> FootBall</h1>
           </div>
           <div class="container_body">
             <a href="https://scratch.mit.edu/projects/695741413/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="football.png" width="220" height="220"></a>
@@ -46,19 +133,19 @@
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Casse Brique V |||</h1>
+        <h1 id="blanc"> Casse Brique V |||</h1>
       </div>
       <div class="container_body">
-        <a href="https://scratch.mit.edu/projects/591215518/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="casse brique III.png" width="220" height="220"></a>
-        <h3 id="blanc"> <a href="https://scratch.mit.edu/projects/591215518/fullscreen/" target="_blank">Casse Brique V |||</a> est un jeux de casse-brique avec différentes dificultés et différents niveaux à éssayer</h3>
-      </div>
+        <div><a href="https://scratch.mit.edu/projects/591215518/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="casse brique III.png" width="220" height="220"></a>
+        </div><div class="marge-texte"><h3 id="blanc"> <a href="https://scratch.mit.edu/projects/591215518/fullscreen/" target="_blank">Casse Brique V |||</a> est un jeux de casse-brique avec différentes dificultés et différents niveaux à éssayer</h3>
+        </div></div>
     </div>
 
     <br><br><br>
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Pokemon Go</h1>
+        <h1 id="blanc"> Pokemon Go</h1>
       </div>
       <div class="container_body">
         <a href="https://scratch.mit.edu/projects/321987446/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="pokescratch.png" width="220" height="220"></a>
@@ -70,7 +157,7 @@
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Pokemon Batle</h1>
+        <h1 id="blanc"> Pokemon Batle</h1>
       </div>
       <div class="container_body">
         <a href="https://scratch.mit.edu/projects/378296376/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="pokemonbatle.png" width="220" height="220"></a>
@@ -82,7 +169,7 @@
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Animal Crossing</h1>
+        <h1 id="blanc"> Animal Crossing</h1>
       </div>
       <div class="container_body">
         <a href="https://scratch.mit.edu/projects/409821399/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="scratchcrossing.png" width="220" height="220"></a>
@@ -94,7 +181,7 @@
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Tower Game Deffence</h1>
+        <h1 id="blanc"> Tower Game Deffence</h1>
       </div>
       <div class="container_body">
         <a href="https://scratch.mit.edu/projects/479791124/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="towergamedefense.png" width="220" height="220"></a>
@@ -106,14 +193,119 @@
     <div class="container">
       <div class="container_head">
         <img src="logo-scratch.png" width="55" height="55">
-        <h1> Volcano Platformer</h1>
+        <h1 id="blanc"> Volcano Platformer</h1>
       </div>
       <div class="container_body">
         <a href="https://scratch.mit.edu/projects/426084396/fullscreen/" target="_blank"><img title="Profile" alt="Profile" src="volcanoplatforme.png" width="220" height="220"></a>
         <h3 id="blanc"> <a href="https://scratch.mit.edu/projects/426084396/fullscreen/" target="_blank">Volcano A Platformer</a> est un jeux de plateforme en ligne ou seul avec plusieurs niveaux et plusieurs skins</h3>
       </div>
     </div>
+    <br><br>
+    <HR>
+      <div class="centre">
+        <h3 id="noir">Créer par AnthoNight26</h3>
+        <a id="noir" href="https://discord.gg/TNxGWbmtVf" target="_blank" title="Serveur Discord">Discord</a>
+      </div>
+  </div>
+  </div>
 
+  <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  window.onscroll = function(ev) {
+    document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
+  };
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var aLiens = document.querySelectorAll('a[href*="#"]');
+  for(var i=0, len = aLiens.length; i<len; i++) {
+    aLiens[i].onclick = function () {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = this.getAttribute("href").slice(1);
+        if (target.length) {
+          scrollTo(document.getElementById(target).offsetTop, 1000);
+          return false;
+        }
+      }
+    };
+  }
+});
+
+function scrollTo(element, duration) {
+	var e = document.documentElement;
+	if(e.scrollTop===0){
+		var t = e.scrollTop;
+		++e.scrollTop;
+		e = t+1===e.scrollTop--?e:document.body;
+	}
+	scrollToC(e, e.scrollTop, element, duration);
+}
+
+function scrollToC(element, from, to, duration) {
+	if (duration < 0) return;
+	if(typeof from === "object")from=from.offsetTop;
+	if(typeof to === "object")to=to.offsetTop;
+	
+	scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
+}
+
+function scrollToX(element, x1, x2, t, v, step, operacion) {
+	if (t < 0 || t > 1 || v <= 0) return;
+	element.scrollTop = x1 - (x1-x2)*operacion(t);
+	t += v * step;
+	
+	setTimeout(function() {
+		scrollToX(element, x1, x2, t, v, step, operacion);
+	}, step);
+}
+
+//BON
+function easeOutCuaic(t){
+	t--;
+	return t*t*t+1;
+}
+
+</script>
+ 
+    <footer class="pied">
+        		                <noscript>
+                     </noscript></a>
+            <!-- Debut/Start Neural audit -->   
+            <script type="text/javascript">
+      	      twCompteur();
+              TW_Site=1;
+              TW_Page="Exemple";
+              TW_Affiche=0;
+              TW_Os=twCompteur.twOs()+' '+twCompteur.twOsV();
+    	        TW_Nav=twCompteur.twNav();
+    	        TW_Robot=twCompteur.twRobot();
+    	        TW_Ref=twCompteur.twReferent();
+              var code = '';
+              if(parseFloat(navigator.appVersion)>=4){
+      	        code += '&amp;w=' + window.screen.width + '&amp;c=' + window.screen.colorDepth;
+                code += '&amp;pj=' + escape(document.location.href.replace('&amp;', '$'));
+                code += '&amp;os=' + escape(TW_Os);
+                code += '&amp;nav=' + escape(TW_Nav);
+                code += '&amp;ref=' + escape(document.referrer);
+              }
+              twcompteur('/commun/twcompteur2.asp?s='+TW_Site+'&amp;p='+TW_Page+'&amp;t='+TW_Affiche+code+'&amp;rf='+TW_Ref+'&amp;rb='+TW_Robot+'');
+            </script>
+            <!-- Fin Neural audit -->
+
+        	</p>
+          
+       
+
+    </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

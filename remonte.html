@@ -1,0 +1,176 @@
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Bouton « Retour en haut » en pur JavaScript (exemple)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+<style>
+a#cRetour{
+  border-radius:3px;
+  padding:10px;
+  font-size:15px;
+  text-align:center;
+  color:#fff;
+  background:rgba(0, 0, 0, 0.25);
+  position:fixed;
+  right:20px;
+  opacity:1;
+  z-index:99999;
+  transition:all ease-in 0.2s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-decoration: none;
+}
+/* Flèche */
+a#cRetour:before{ content: "\25b2"; }
+a#cRetour:hover{
+  background:rgba(0, 0, 0, 1);
+  transition:all ease-in 0.2s;
+}
+a#cRetour.cInvisible{
+  bottom:-35px;
+  opacity:0;
+  transition:all ease-in 0.5s;
+}
+
+a#cRetour.cVisible{
+  bottom:10px;
+  opacity:1;
+}
+
+html,body {
+  height:100%;
+  margin:0;
+}
+.content {
+  height:100%;
+  min-height:100%;/*for mozilla*/
+  font-size:6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html>body .content {  height:auto;}
+#section1 {  background-color: #c6c3bd;}
+#section2 {  background-color: #d6d3ce;}
+#section3 {  background-color: #eeeeee;}
+#section4 {  background-color: #ffffff;}
+</style>
+	
+	</head>
+
+
+<body style="height:100%" name="haut" id="haut">
+<div class="content" id="section1">Section 1</div>
+<div class="content" id="section2">Section 2</div>
+<div class="content" id="section3">Section 3</div>
+<div class="content" id="section4">Section 4</div>
+        
+<div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  window.onscroll = function(ev) {
+    document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
+  };
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var aLiens = document.querySelectorAll('a[href*="#"]');
+  for(var i=0, len = aLiens.length; i<len; i++) {
+    aLiens[i].onclick = function () {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = this.getAttribute("href").slice(1);
+        if (target.length) {
+          scrollTo(document.getElementById(target).offsetTop, 1000);
+          return false;
+        }
+      }
+    };
+  }
+});
+
+function scrollTo(element, duration) {
+	var e = document.documentElement;
+	if(e.scrollTop===0){
+		var t = e.scrollTop;
+		++e.scrollTop;
+		e = t+1===e.scrollTop--?e:document.body;
+	}
+	scrollToC(e, e.scrollTop, element, duration);
+}
+
+function scrollToC(element, from, to, duration) {
+	if (duration < 0) return;
+	if(typeof from === "object")from=from.offsetTop;
+	if(typeof to === "object")to=to.offsetTop;
+	
+	scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
+}
+
+function scrollToX(element, x1, x2, t, v, step, operacion) {
+	if (t < 0 || t > 1 || v <= 0) return;
+	element.scrollTop = x1 - (x1-x2)*operacion(t);
+	t += v * step;
+	
+	setTimeout(function() {
+		scrollToX(element, x1, x2, t, v, step, operacion);
+	}, step);
+}
+
+//BON
+function easeOutCuaic(t){
+	t--;
+	return t*t*t+1;
+}
+
+</script>
+ 
+    <footer class="pied">
+        		<p style="text-align:center;">Copyright © 1997-2015&nbsp;&nbsp; <a href="http://www.oznogco.com" target="_blank"><img src="http://trucsweb.com/images/l_ozb2.png" style="max-width:100px;width:20%" alt="Conception Oznogco Multimédia"></a>&nbsp;&nbsp; <a href="http://www.xiti.com/xiti.asp?s=16970" title="WebAnalytics" target="_top" style="margin:0;padding:0;">
+              <script type="text/javascript">
+                <!--
+                Xt_param = 's=16970&p=Exemple';
+                try {Xt_r = top.document.referrer;}
+                catch(e) {Xt_r = document.referrer; }
+                Xt_h = new Date();
+                Xt_i = '<img width="80" height="15" alt="" ';
+                Xt_i += 'src="http://logv1.xiti.com/g.xiti?'+Xt_param;
+                Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+                if(parseFloat(navigator.appVersion)>=4)
+                {Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;}
+                document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" title="Internet Audience">');
+                //-->
+            </script><img alt="" src="http://logv1.xiti.com/g.xiti?s=16970&amp;p=Exemple&amp;hl=14x1x3&amp;r=1536x864x24x24&amp;ref=" title="Internet Audience" width="80" height="15">
+            <noscript>
+              Mesure d'audience ROI statistique webanalytics par <img width="80" height="15" src="http://logv1.xiti.com/g.xiti?s=16970&amp;p=Exemple" alt="WebAnalytics" />
+            </noscript></a>
+            <!-- Debut/Start Neural audit -->   
+            <script type="text/javascript">
+      	      twCompteur();
+              TW_Site=1;
+              TW_Page="Exemple";
+              TW_Affiche=0;
+              TW_Os=twCompteur.twOs()+' '+twCompteur.twOsV();
+    	        TW_Nav=twCompteur.twNav();
+    	        TW_Robot=twCompteur.twRobot();
+    	        TW_Ref=twCompteur.twReferent();
+              var code = '';
+              if(parseFloat(navigator.appVersion)>=4){
+      	        code += '&amp;w=' + window.screen.width + '&amp;c=' + window.screen.colorDepth;
+                code += '&amp;pj=' + escape(document.location.href.replace('&amp;', '$'));
+                code += '&amp;os=' + escape(TW_Os);
+                code += '&amp;nav=' + escape(TW_Nav);
+                code += '&amp;ref=' + escape(document.referrer);
+              }
+              twcompteur('/commun/twcompteur2.asp?s='+TW_Site+'&amp;p='+TW_Page+'&amp;t='+TW_Affiche+code+'&amp;rf='+TW_Ref+'&amp;rb='+TW_Robot+'');
+            </script>
+            <!-- Fin Neural audit -->
+
+        	</p>
+          
+       
+
+    </footer>
+
+
+</body></html>
