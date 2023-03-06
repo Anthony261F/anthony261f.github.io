@@ -44,7 +44,8 @@
 #blanc,
 #noir,
 #nom-page,
-#marge-texte {
+.marge-texte,
+.transition {
   z-index: 1;
   font-family: "Anton", sans-serif;
 }
@@ -260,4 +261,11 @@ li {
 .label {
   padding-right: 10px;
   font-size: 1rem;
+}
+
+.transition {
+	transition:all ease-in 0.2s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-decoration: underline;
 }
