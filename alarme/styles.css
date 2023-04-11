@@ -19,17 +19,23 @@ body {
   }
 
   .droite {
+    text-align: center;
     float: left;
     margin: 10%;
     color:white;
-    width: 30%;
+    width: 20%;
+    background-color: #25e4db;
+    padding: 10px;
   }
 
   .gauche {
+    text-align: center;
     float: right;
     margin: 10%;
     color:white;
-    width: 30%;
+    width: 20%;
+    background-color: #25e4db;
+    padding: 10px;
   }
 
   #blanc {
