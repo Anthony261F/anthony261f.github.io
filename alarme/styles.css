@@ -1,3 +1,7 @@
+body {
+  background-color: #595959;
+}
+
 #timer {
     font-weight: bold;
   }
@@ -16,8 +20,25 @@
 
   .droite {
     float: left;
+    margin: 10%;
+    color:white;
   }
 
   .gauche {
     float: right;
+    margin: 10%;
+    color:white;
+  }
+
+  #blanc {
+    color:white;
+  }
+
+  #rouge {
+    color:red;
+  }
+
+  .tour {
+    margin: 10%;
+    height:auto;
   }
