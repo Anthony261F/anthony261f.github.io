@@ -34,25 +34,27 @@ function ouvrir24H ()
   </head>
 
   <body>
-    <div> <!-- Vote 2 heures-->
+    <div class="droite"> <!-- Vote 2 heures-->
       <div id="timer">120:00</div>
       <button onclick="parent.ouvrir2H()">Open</button>
       <button onclick="start2()">Start</button>
     </div>
 
-    <div> <!-- Vote 3 heures-->
+    <div class="gauche"> <!-- Vote 3 heures-->
       <div id="timer3">180:00</div>
       <button onclick="parent.ouvrir3H()">Open</button>
       <button onclick="start3()">Start</button>
     </div>
 
-    <div> <!-- Vote 3e heures-->
+    <br style="clear:both;">
+
+    <div class="droite"> <!-- Vote 3e heures-->
       <div id="timer3e">180:00</div>
       <button onclick="parent.ouvrir3He()">Open</button>
       <button onclick="start3e()">Start</button>
     </div>
 
-    <div> <!-- Vote 24 heures-->
+    <div class="gauche"> <!-- Vote 24 heures-->
       <div id="timer24">1440:00</div>
       <button onclick="parent.ouvrir24H()">Open</button>
       <button onclick="start24()">Start</button>

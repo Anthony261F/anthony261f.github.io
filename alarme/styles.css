@@ -13,3 +13,11 @@
   #timer24 {
     font-weight: bold;
   }
+
+  .droite {
+    float: left;
+  }
+
+  .gauche {
+    float: right;
+  }
