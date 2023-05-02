@@ -1,7 +1,8 @@
 function start2() {
 
-minutes = 1
-let temps = 2 * 60 * 60
+  
+minutes = 1;
+let temps = 2 * 60 * 60;
 
 const timerElement = document.getElementById("timer")
 

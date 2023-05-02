@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: #0067B8;}
+
+
+* {
+  text-align: center;
+  font-size: 16px;
+  margin-top:0px;
+  color: white;
+}
+p {
+  text-align: center;
+  font-size: 32px;
+  margin-top:0px;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<H1>La Fin de service des versions de Windows 10</H1>
+Windows 10 version 1909
+<div id="Compte8"></div>
+Windows 10 version 1903
+<div id="Compte7"></div>
+Windows 10 version 1809
+<div id="Compte6"></div>
+Windows 10 version 1803
+<div id="Compte5"></div>
+Windows 10, version 1709
+<div id="Compte4"></div>
+Windows 10 version 1703
+<div id="Compte3"></div>
+Windows 10 version 1607
+<div id="Compte2"></div>
+Windows 10 version 1511
+<div id="Compte1"></div>
+Windows 10, disponible en juillet 2015 (version 1507)
+<div id="Compte0"></div>
+
+<p><em>Les &eacute;ditions Entreprise et &Eacute;ducation des versions 1511, 1607, 1703 et 1709 b&eacute;n&eacute;ficieront d'une p&eacute;riode de 6 mois de service suppl&eacute;mentaire apr&egrave;s la date de fin du service.<br>Remarque : les fonctionnalit&eacute;s incluses dans une mise &agrave; jour ne fonctionnent pas forc&eacute;ment sur tous les appareils. Il arrive qu'un appareil ne puisse pas recevoir de mises &agrave; jour, notamment si son mat&eacute;riel n'est pas compatible, s'il ne dispose pas des derniers pilotes, ou s'il a d&eacute;pass&eacute; la p&eacute;riode de support du fabricant d'ordinateurs OEM. </em></p>
+
+<script>
+function Rebour(id_html, date_rebour) {
+   
+
+    var date1 = new Date();
+    var date2 = new Date(date1.replace(date1.getHours(), date1.getHours() + 2));
+    var sec = (date2 - date1) / 1000;
+    var n = 24 * 3600;
+    if (sec > 0) {
+        j = Math.floor(sec / n);
+        h = Math.floor((sec - (j * n)) / 3600);
+        mn = Math.floor((sec - ((j * n + h * 3600))) / 60);
+        sec = Math.floor(sec - ((j * n + h * 3600 + mn * 60)));
+        document.getElementById(id_html).innerHTML = "Dans " + j + " j " + h + " h " + mn + " min " + sec + " s ";
+        window.status = "Dans " + j + " j " + h + " h " + mn + " min " + sec + " s ";
+    }
+    else {
+      document.getElementById(id_html).innerHTML = "Fin du support";
+        window.status = "Fin du support";
+        }
+        
+    
+    tRebour = setTimeout(function() {
+        Rebour(id_html, date_rebour);
+    }, 1000);
+}
+Rebour('Compte0', 'May 9 00:00:00 2017');
+Rebour('Compte1', 'Oct 10 00:OO:00 2017');
+Rebour('Compte2', 'Apr 9 00:30:00 2019');
+Rebour('Compte3', 'Oct 8 00:00:00 2019');
+Rebour('Compte4', 'Oct 13 00:00:00 2020');
+Rebour('Compte5', 'Nov 10 00:00:00 2020');
+Rebour('Compte6', 'May 11 00:00:00 2021');
+Rebour('Compte7', 'DEC 8 00:00:00 2020');
+Rebour('Compte8', 'May 10 00:00:00 2022');
+</script>
+
+</body>
+</html> 

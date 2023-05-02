@@ -12,6 +12,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      body {
+        
+        background-color: white;
+        color: black;
+        
+      }
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+        <script>
+         function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+        </script>
 </head>
 <body class="is-preload">
   <!-- Wrapper -->
@@ -38,7 +65,7 @@
         <nav id="menu">
           <h2 class="titre" style="text-align: center; font-size: 30px">Menu</h2>
           <HR>
-          <div style="text-align: center;">
+          <div style="text-align: center; height: 90%;">
             <li> <a id="blanc" href="index.html" title="menu">Acceuil</a></li>
             <li> <a id="blanc" href="https://scratch.mit.edu/projects/695741413/"  target="_blank" title="jeux scratch">FootBall</a>
             <li> <a id="blanc" href="Scratch.html" title="Projet Scratch">Scratch</a></li>
@@ -49,6 +76,10 @@
             <li> <a id="blanc" href="info.html" title="information">Information</a></li>
             <HR>
             <li> <a id="blanc" href="https://discord.gg/TNxGWbmtVf"  target="_blank" title="pas disponible">Discord</a></li>
+            <div style="margin-top: 90%;">
+              <button onclick="lightMode()" id="jaune" style="background-color: white;">🌞</button>
+              <button onclick="darkMode()" id="jaune" style="background-color: black;">🌙</button>
+            </div>
           </div>
         </nav>
 
@@ -63,7 +94,11 @@
                   <img src="http://www.mon-compteur.fr/html_c02genv2-72940-5">
                   <h6 class="texteinfo"> add une banière de menu</h6> <br>
                   <h6 class="texteinfo"> add une page d'actu</h6> <br>
-          
+                  <h1 id="style">cc</h1>
+                  <h1 id="noir">noir</h1>
+                  <h1 id="noir">noir</h1>
+                  <h1 id="blanc">blanc</h1>
+                  <h1>rien</h1>
                 </div>
           
               
@@ -102,6 +137,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>

@@ -45,7 +45,8 @@
 #noir,
 #nom-page,
 .marge-texte,
-.transition {
+.transition,
+#style {
   z-index: 1;
   font-family: "Anton", sans-serif;
 }
@@ -268,4 +269,9 @@ li {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   text-decoration: underline;
+}
+
+.mode_sombre {
+margin-top: 100%;
+margin-left: 90%;
 }
