@@ -72,6 +72,32 @@
         open(link,"_blank")
         }
         </script>
+           <script>
+            function darkMode() {
+           var element = document.body;
+           var content = document.getElementById("DarkModetext");
+           element.className = "dark-mode";
+           content.innerText = "Dark Mode is ON";
+         }
+         function lightMode() {
+           var element = document.body;
+           var content = document.getElementById("DarkModetext");
+           element.className = "light-mode";
+           content.innerText = "Dark Mode is OFF";
+         }
+           </script>
+           <style>
+            body {
+              
+              background-color: white;
+              color: black;
+              
+            }
+            .dark-mode {
+              background-color: black;
+              color: white;
+            }
+          </style>
 </head>
 <body class="is-preload" name="haut" id="haut">
   <!-- Wrapper -->
@@ -109,6 +135,10 @@
             <li> <a id="blanc" href="info.html" title="Information du Site">Information</a></li>
             <HR>
             <li ALT="Mon site" onclick="parent.ouvrirDiscord()" ><a href="#haut" id="blanc">Discord</a></li>
+            <div style="margin-top: 90%;">
+              <button onclick="lightMode()" id="jaune" style="background-color: white;">🌞</button>
+              <button onclick="darkMode()" id="jaune" style="background-color: black;">🌙</button>
+            </div>
           </div>
         </nav>
 
@@ -128,7 +158,7 @@
       </div>
       <div class="flex">
         <h1><h1 id="Minecraft" class="titrejeux"> Minecraft</h1>
-        <h2 id="jaune"> Je joue surtout a Pixelmon mais quelque fois a HyghtPixel</h2>
+        <h2 id="jaune"> Je joue surtout a Sunaris</h2>
         <img src="mc.jfif" class="fond">
       </div>
       <div class="flex">
@@ -143,7 +173,7 @@
       </div>
       <div class="flex">
         <h1><h1 id="bs" class="titrejeux"> </h1>
-        <h2 class="textemuffin"> Mon record de trophé : 19153🏆 <br> Mon code ami : #8992PJVJJ </h2>
+        <h2 class="textemuffin"> Mon record de trophé : 22439🏆 <br> Mon code ami : #8992PJVJJ </h2>
         <img src="brawl star.jpg" class="fond">
       </div>
       <div class="flex">
@@ -168,19 +198,19 @@
       </div>
       <div class="flex">
         <h1><h1 id="rls" class="titrejeux"> </h1>
-        <h2 id="rouge"> Je suis classé Argent V en Duo et Argent III en Duel et Trio</h2>
+        <h2 id="rouge"> Je suis classé Or I en Duo et Or I en Duel et  Argent II en Trio</h2>
         <img src="rls.jpg" class="fond">
       </div>
       <div class="flex">
         <h1><h1 id="lm" class="titrejeux"> </h1>
-        <h2 id="orange"> j'ai 52,289,000 puissance et je me situ dans le K:1167</h2>
+        <h2 id="orange"> j'ai 84,987,000 puissance et je me situ dans le K:442</h2>
         <img src="lm.jpg" class="fond">
       </div>
       <br><br>
       <HR>
         <div class="centre">
-          <h3 id="noir">Créer par AnthoNight26</h3>
-          <a id="noir" href="https://discord.gg/TNxGWbmtVf" target="_blank" title="Serveur Discord">Discord</a>
+          <h3 id="style">Créer par AnthoNight26</h3>
+          <a id="style" href="https://discord.gg/TNxGWbmtVf" target="_blank" title="Serveur Discord">Discord</a>
         </div>
     </div>
     </div>
@@ -282,6 +312,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="index.js"></script>
       
 </body>
 </html>
