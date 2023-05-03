@@ -39,6 +39,14 @@
         content.innerText = "Dark Mode is OFF";
       }
         </script>
+        <script>
+          function ouvrirDiscord ()
+          {
+          var link = "https://discord.gg/TNxGWbmtVf";
+          open(link,"_blank")
+          }
+          </script>
+          
 </head>
 <body class="is-preload">
   <!-- Wrapper -->
@@ -75,7 +83,7 @@
             <li> <a id="blanc" href="musique.html" title="skin minecraft">Musique</a></li>
             <li> <a id="blanc" href="info.html" title="information">Information</a></li>
             <HR>
-            <li> <a id="blanc" href="https://discord.gg/TNxGWbmtVf"  target="_blank" title="pas disponible">Discord</a></li>
+              <li ALT="Mon site" onclick="parent.ouvrirDiscord()" ><a href="#haut" id="blanc">Discord</a></li>
             <div style="margin-top: 90%;">
               <button onclick="lightMode()" id="jaune" style="background-color: white;">🌞</button>
               <button onclick="darkMode()" id="jaune" style="background-color: black;">🌙</button>
@@ -99,8 +107,10 @@
                   <h1 id="noir">noir</h1>
                   <h1 id="blanc">blanc</h1>
                   <h1>rien</h1>
+                  
+                 
                 </div>
-          
+
               
                 <br>
                 <div>
@@ -127,7 +137,20 @@
           </audio>
           </div>
           <br>
-         
+        <div class="flex">
+          <div style="position:fixed; z-index: 1000; background-color: blue; height:100%; width:100%" id="popit"></div>
+          <div style="position:fixed; z-index: 10000; background-color: aqua;" id="popit">
+            <h1>salut</h1>
+            <button onclick="pop()" >OK</button>
+          </div>
+          <script>
+            var id = document.getElementById("popit");
+            id.style.visibility = "visible";
+            function pop() {
+              id.style.visibility = "hidden";
+            }
+          </script>
+</div>
     </div>
     </div>
 
@@ -138,6 +161,8 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="index.js"></script>
+
+
 
 </body>
 </html>
