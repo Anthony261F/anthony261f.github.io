@@ -2,37 +2,16 @@
 <html> 
 <head> 
 	<meta charset="utf-8" /> 
-	<title>Fenêtre modale HTML5</title> 
-	<style> 
-                #promptCompat{ 
-                        display: none; 
-                } 
-                #promptCompat.no_dialog{ 
-                        box-shadow: 0 0 5px 2px red; 
-                        padding: 10px; 
-                        display: block; 
-                        text-align: center; 
-                        font-weight: bold; 
-                } 
-                .boutons{ 
-                        padding: 10px; 
-                } 
-                dialog{ 
-                        border-radius: 10px; 
-                        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); 
-                } 
-                dialog::backdrop{ 
-                        background-color: rgba(0, 0, 0, 0.6); 
-                } 
-        </style> 
+	<title>Pop</title> 
 </head> 
 <body> 
     <div style="position:fixed; z-index: 1000; background-color: gray; height:100%; width:100%; opacity: 0.5;" id="popit1"></div>
     <div style="position:fixed; z-index: 10000; background-color: white; border: solid; text-align: center; margin-top: 20%; margin-left: 30%; width: 40%;" id="popit2">
       <h1>salut</h1>
-      <button onclick="pop()" >OK</button>
+      <button onclick="pop()">OK</button>
     </div>
 	<h1>test</h1> 
+        <button onclick="pit()">open</button>
     <img src="muffin.jpg">
    
     <script>
@@ -43,6 +22,10 @@
       function pop() {
         id.style.visibility = "hidden";
         id2.style.visibility = "hidden";
+      }
+      function pit() {
+        id.style.visibility = "visible";
+        id2.style.visibility = "visible";
       }
     </script>
 </body> 

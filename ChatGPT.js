@@ -1,4 +1,4 @@
-var OPENAI_API_KEY = "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";
+var OPENAI_API_KEY = "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";
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null

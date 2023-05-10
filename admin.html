@@ -107,37 +107,12 @@
                   <h1 id="noir">noir</h1>
                   <h1 id="blanc">blanc</h1>
                   <h1>rien</h1>
-                  
-                 
                 </div>
 
               
-                <br>
-                <div>
-          <table>
-          <tr>
-            <td>
-          A1
-            </td>
-          </tr>
-          <tr>
-            <td>
-              B1
-            </td>
-            <td>
-              B2
-            </td>
-          </tr>
-          </table>
-                </div>
-          <br>
-          <div>
-          <audio src="Lobby.mp3" autoplay loop>
-          
-          </audio>
-          </div>
-          <br>
+
         <div class="flex">
+          <button onclick="pit">open</button>
           <div style="position:fixed; z-index: 1000; background-color: blue; height:100%; width:100%" id="popit"></div>
           <div style="position:fixed; z-index: 10000; background-color: aqua;" id="popit">
             <h1>salut</h1>
@@ -145,14 +120,18 @@
           </div>
           <script>
             var id = document.getElementById("popit");
-            id.style.visibility = "visible";
+            
             function pop() {
               id.style.visibility = "hidden";
             }
+            function pit() {
+              id.style.visibility = "visible";
+            }
           </script>
-</div>
+        </div>
     </div>
     </div>
+  </div>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
