@@ -1,0 +1,113 @@
+.center {
+text-align:center;
+text-decoration: underline;
+font-size: 35px;
+color: black;
+background-color:white;
+width:500px;
+margin-left:auto;
+margin-right:auto;
+border-radius: 25px;
+ transition-property: background-color;
+ transition-duration: 2s;
+}
+
+.center:hover {
+    background-color:aqua;
+}
+
+.gauche:hover {
+    background-color:aqua;
+}
+
+.droite:hover {
+    background-color:aqua;
+}
+
+.retour:hover {
+    background-color:aqua;
+}
+
+.center-2 {
+text-align:center;
+
+    width: 100%;
+    color: white;
+}
+
+.gauche {
+    float: left;
+    text-align: center;
+    width: auto;
+    color: black;
+    background-color:white;
+    margin-left:20%;
+	padding: 1%;
+	border-radius: 25px;
+	 transition-property: background-color;
+ transition-duration: 2s;
+}
+
+.droite {
+    float: right;
+    text-align: center;
+    width: auto;
+    color: black;
+    background-color:white;
+    margin-right:20%;
+	padding:1%;
+	border-radius: 25px;
+	 transition-property: background-color;
+ transition-duration: 2s;
+}
+
+.retour {
+    float: right;
+    text-align: center;
+    width: 20%;
+    color: white;
+	 background-color:white;
+	 border-radius: 25px;
+	 transition-property: background-color;
+ transition-duration: 2s;
+ 
+}
+
+.gauche3 {
+    float: left;
+    text-align: center;
+    width: 30%;
+    color: white;
+    
+}
+
+.droite3 {
+    float: right;
+    text-align: center;
+    width: 30%;
+    color: white;
+}
+
+.rien3 {
+	float: none;
+    text-align: center;
+    width: 30%;
+    color: white;
+	margin-left: 30%;
+}
+
+body {
+background-image:url(fond.gif);
+background-size:100% 100%;
+background-repeat: no-repeat;
+margin:0px;
+}
+
+a {
+    color: green;
+    text-decoration: underline;
+}
+
+#titre {
+    font-size: 30px;
+}

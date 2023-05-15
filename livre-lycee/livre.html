@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <title>Livres</title>
+    <link rel="stylesheet" href="style.css">
+    
+	<script src="cc/test-c.js?v=12"></script>
+	<link rel="stylesheet" href="calc.css" type="text/css">
+	</head>
+    <body onload="OnLoad()" class="is-preload" name="haut" id="haut" style="margin:Opx; background-position: fixed;">
+
+
+							<div onclick="pip()" style="position:absolute; z-index: 1000; background-color: gray; height:100%; width:100%; opacity: 0.5;" id="pipop1"></div>
+							<div style="position:absolute; z-index: 10000; background-color: white; border: solid; text-align: center; margin-top: 10%; margin-left: 30%; width: 40%;" id="pipop2">
+								<h3 style="text-decoration: underline; font-size: 35px;">Je sais rien</h3>
+								<textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 100%;" 
+							 placeholder="Reponce"></textarea>
+					
+							<div>
+								<button type="button" onclick="Send()" id="btnSend" style="background-color:yellow;">Send</button>
+								<label id="lblSpeak"><input id="chkSpeak" type="checkbox" 
+								 onclick="SpeechToText()" />Listen</label>
+								<label id="lblMute"><input id="chkMute" type="checkbox" 
+								 onclick="Mute(this.checked)"/>Mute</label>
+					
+								<select id="selModel">
+									<option value="text-davinci-003">text-davinci-003</option>
+									<option value="text-davinci-002">text-davinci-002</option>
+									<option value="code-davinci-002">code-davinci-002</option>
+								</select>
+					
+								<select id="selLang" onchange="ChangeLang(this)">
+									
+									<option value="fr-FR">French (France)</option>
+									<option value="en-US">English (United States)</option>
+									<option value="ru-RU">Russian (Russia)</option>
+									<option value="pt-BR">Portuguese (Brazil)</option>
+									<option value="es-ES">Spanish (Spain)</option>
+									<option value="de-DE">German (Germany)</option>
+									<option value="it-IT">Italian (Italy)</option>
+									<option value="pl-PL">Polish (Poland)</option>
+									<option value="nl-NL">Dutch (Netherlands)</option>
+								</select>
+					
+								<select id="selVoices"></select>
+							</div>
+					
+							<textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; 
+							 margin-left: 3px; margin-top: 6px" placeholder="Question"></textarea>
+					
+							<div id="idText"></div>
+								
+								<br>
+							  <button onclick="pip()" style="background-color: red;">Fermer</button>
+						</div>
+							<script>
+							  var idpip = document.getElementById("pipop1");
+							  var idpip2 = document.getElementById("pipop2");
+							  idpip.style.visibility = "hidden";
+							  idpip2.style.visibility = "hidden";
+							  function pip() {
+								idpip.style.visibility = "hidden";
+								idpip2.style.visibility = "hidden";
+							  }
+							  function pot() {
+								idpip.style.visibility = "visible";
+								idpip2.style.visibility = "visible";
+							  }
+							</script>
+
+							<div onclick="pop()" style="position:absolute; z-index: 1000; background-color: gray; height:100%; width:100%; opacity: 0.5;" id="popit1"></div>
+							<div style="position:absolute; z-index: 10000; background-color: white; border: solid; text-align: center; margin-top: 10%; margin-left: 30%; width: 40%;" id="popit2">
+								<h3 style="text-decoration: underline; font-size: 35px;">Calculatrice</h3>
+								<div class="display">
+									<p id="output">0</p>
+								</div>
+							<div class="first-row">
+							   <button class="button" id="r1-1" onclick="forclear()" style="width: 138px;">C</button>
+							   <button class="button" id="r1-3" onclick="perc()">%</button>
+							   <button class="button" id="r1-4" value="/" onclick="fordisplay('/')">/</button>
+							</div>
+							<div class="second-row">
+							   <button class="button" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
+							   <button class="button" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
+							   <button class="button" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
+							   <button class="button" id="r2-4" value="*" onclick="fordisplay('*')">X</button>
+							</div>
+							<div class="third-row">
+							   <button class="button" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
+							   <button class="button" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
+							   <button class="button" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
+							   <button class="button" id="r3-4" value="-" onclick="fordisplay('-')">-</button>
+							</div>
+							<div class="fourth-row">
+							   <button class="button" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
+							   <button class="button" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
+							   <button class="button" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
+							   <button class="button" id="r4-4" value="+" onclick="fordisplay('+')">+</button>
+							</div>
+							<div class="fifth-row">
+							  <button class="button" id="r5-1" value="0" onclick="fordisplay('0')"style="width: 138px;">0</button>
+							  <button class="button" id="r5-2" value="." onclick="fordisplay('.')">.</button>
+							  <button class="button" id="r5-3" value="=" onclick="solve()">=</button>
+							</div>
+								
+								<script>
+									function forclear() {
+										document.getElementById("output").innerHTML = "0";
+									}
+									function removeZero() {
+									var value = document.getElementById("output").innerHTML;
+										if (value == "0") {
+											value = " "
+											document.getElementById("output").innerHTML = value;
+										}
+									}
+									function perc() {
+										var value = document.getElementById("output").innerHTML;
+										value = value / 100;
+										document.getElementById("output").innerHTML = value;
+									}
+									function fordisplay(value) {
+										removeZero()
+										document.getElementById("output").innerHTML += value;
+									}
+									function solve() {
+										removeZero()
+										var equation = document.getElementById("output").innerHTML;
+										var solved = eval(equation);
+										document.getElementById('output').innerHTML = solved;
+									}
+								</script>
+								<br>
+							  <button onclick="pop()" style="background-color: red;">Fermer</button>
+						</div>
+							<script>
+							  var idpop = document.getElementById("popit1");
+							  var idpop2 = document.getElementById("popit2");
+							  idpop.style.visibility = "hidden";
+							  idpop2.style.visibility = "hidden";
+							  function pop() {
+								idpop.style.visibility = "hidden";
+								idpop2.style.visibility = "hidden";
+							  }
+							  function pit() {
+								idpop.style.visibility = "visible";
+								idpop2.style.visibility = "visible";
+							  }
+							</script>
+
+				<button onclick="pot()" style="position:fixed;">Robot</button>
+
+        <div class="center">
+            <h1>Ressource</h1>
+        </div>
+        <br style="clear:both;">
+	<div class="gauche">
+        <h1 id="titre">Livre en ligne</h1>
+        <h3><a href="https://fr.calameo.com/read/0005967298a6f595a36e9" target="blank">Phisique Chime</a></h3>
+        <h3><a href="https://fr.calameo.com/read/0049569793cd3ff1ce5a2" target="blank">SVT</a></h3>
+        <h3><a href="https://fr.calameo.com/read/000596729eb2a8fb4dce5" target="blank">SNT</a></h3>
+        <h3><a href="histoire.html">Histoire</a></h3>
+        <h3><a href="https://biblio.nathan.fr/specimen/9782091725970/?openBook=9782091725970%3fdXNlck5hbWU9bWtjK2J0SHR5akx6UWNGVjdGOFU2ZENFRUpnUTY4eks3MldRSGU2SHJIVT0mdXNlclBhc3N3b3JkPXpWYVMrNXl5Z2h4dTIzQjRDQXpLMzMvVjNnRFIwaGVvSko4bVZ6UlhuWEk9JmRlbW89dHJ1ZSZ3YXRlcm1hcms9dHJ1ZQ==" target="blank">SES</a></h3>
+    </div>
+        <div class="droite">
+            <h1 id="titre">Ressource en ligne</h1>
+            <h3><a href="https://0260023j.index-education.net/pronote/eleve.html?identifiant=Wex5ZfY5EmVJ6RHA" target="blank">Pronote</a></h3>
+            <h3><a href="https://onedrive.live.com/?id=root&cid=3450C61A271BEED1" target="blank">OneDrive</a></h3>
+            <h3><a href="https://dauphine.ent.auvergnerhonealpes.fr/sg.do?PROC=PAGE_ACCUEIL&ACTION=VALIDER" target="blank">ENT</a></h3>
+            <h3><a href="https://translate.google.fr/?hl=fr" target="blank">Traduction</a></h3>
+    	</div>
+		<br style="clear:both;">
+		<div class="center">
+			<h3>Calculatrice</h3>
+			<button onclick="pit()"><img src="logo-calc.png" width="50px"></button>
+			<br>
+		</div>
+
+</body>
+</html>
