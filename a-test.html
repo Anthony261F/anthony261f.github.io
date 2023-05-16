@@ -4,28 +4,34 @@
 	<meta charset="utf-8" /> 
 	<title>Pop</title> 
 </head> 
-<body style="margin:0px; display:contents;"> 
-    <div onclick="pop()" style="position:fixed; z-index: 1000; background-color: gray; height:100%; width:100%; opacity: 0.5;" id="popit1"></div>
-    <div style="position:fixed; z-index: 10000; background-color: white; border: solid; text-align: center; margin-top: 20%; margin-left: 30%; width: 40%;" id="popit2">
+<body style="margin:0px; display:contents;">
+  
+  <!-- page 1-->
+    <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
       <h1>salut</h1>
-      <button onclick="pop()">OK</button>
-    </div>
-	<h1>test</h1> 
-        <button onclick="pit()">open</button>
+        <button onclick="go2()">page 2</button>
     <img src="muffin.jpg">
-   
+    </div>
+          
+     <!-- page 2-->
+     <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
+      <h1>bonjour</h1>
+        <button onclick="go1()">page 1</button>
+    <img src="frim.jpg">
+    </div>
+
     <script>
-      var id = document.getElementById("popit1");
-      var id2 = document.getElementById("popit2");
+      var id = document.getElementById("page1");
+      var id2 = document.getElementById("page2");
       id.style.visibility = "visible";
-      id2.style.visibility = "visible";
-      function pop() {
+      id2.style.visibility = "hidden";
+      function go2() {
         id.style.visibility = "hidden";
-        id2.style.visibility = "hidden";
-      }
-      function pit() {
-        id.style.visibility = "visible";
         id2.style.visibility = "visible";
+      }
+      function go1() {
+        id.style.visibility = "visible";
+        id2.style.visibility = "hidden";
       }
     </script>
 </body> 
