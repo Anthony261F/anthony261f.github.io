@@ -8,30 +8,76 @@
   
   <!-- page 1-->
     <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
-      <h1>salut</h1>
-        <button onclick="go2()">page 2</button>
+      <h1>Page 1</h1>
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
     <img src="muffin.jpg">
     </div>
           
      <!-- page 2-->
      <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
-      <h1>bonjour</h1>
-        <button onclick="go1()">page 1</button>
-    <img src="frim.jpg">
+      <h1>Page 2</h1>
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+    <img src="muffin.jpg">
     </div>
+
+      <!-- page 3-->
+      <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
+        <h1>Page 3</h1>
+        <button onclick="go1()">page 1</button>
+        <button onclick="go2()">page 2</button>
+        <button onclick="go3()">page 3</button>
+        <button onclick="go4()">page 4</button>
+      <img src="muffin.jpg">
+      </div>
+            
+       <!-- page 4-->
+       <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
+        <h1>Page 4</h1>
+          <button onclick="go1()">page 1</button>
+          <button onclick="go2()">page 2</button>
+          <button onclick="go3()">page 3</button>
+          <button onclick="go4()">page 4</button>
+      <img src="muffin.jpg">
+      </div>
 
     <script>
       var id = document.getElementById("page1");
       var id2 = document.getElementById("page2");
+      var id3 = document.getElementById("page3");
+      var id4 = document.getElementById("page4");
       id.style.visibility = "visible";
       id2.style.visibility = "hidden";
+      id3.style.visibility = "hidden";
+      id4.style.visibility = "hidden";
       function go2() {
         id.style.visibility = "hidden";
         id2.style.visibility = "visible";
+        id3.style.visibility = "hidden";
+      id4.style.visibility = "hidden";
       }
       function go1() {
         id.style.visibility = "visible";
         id2.style.visibility = "hidden";
+        id3.style.visibility = "hidden";
+      id4.style.visibility = "hidden";
+      }
+      function go3() {
+        id.style.visibility = "hidden";
+        id3.style.visibility = "visible";
+        id2.style.visibility = "hidden";
+      id4.style.visibility = "hidden";
+      }
+      function go4() {
+        id4.style.visibility = "visible";
+        id2.style.visibility = "hidden";
+        id3.style.visibility = "hidden";
+      id.style.visibility = "hidden";
       }
     </script>
 </body> 
