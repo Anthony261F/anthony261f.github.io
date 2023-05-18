@@ -12,13 +12,16 @@
       <button onclick="go2()">page 2</button>
       <button onclick="go3()">page 3</button>
       <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
       <h1>Page 1</h1>
       <img src="muffin.jpg">
       <h1>Page 1</h1>
       <img src="muffin.jpg">
       <h1>Page 1</h1>
       <img src="muffin.jpg">
-      </div>
+     </div>
           
      <!-- page 2-->
      <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
@@ -26,67 +29,160 @@
       <button onclick="go2()">page 2</button>
       <button onclick="go3()">page 3</button>
       <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
       <h1>Page 2</h1>
       <img src="frim.jpg">
     </div>
 
-      <!-- page 3-->
-      <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
-        <button onclick="go1()">page 1</button>
-        <button onclick="go2()">page 2</button>
-        <button onclick="go3()">page 3</button>
-        <button onclick="go4()">page 4</button>
-        <h1>Page 3</h1>
-        <img src="musique.png">
-      </div>
+    <!-- page 3-->
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
+      <h1>Page 3</h1>
+      <img src="musique.png">
+    </div>
             
-       <!-- page 4-->
-       <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
-          <button onclick="go1()">page 1</button>
-          <button onclick="go2()">page 2</button>
-          <button onclick="go3()">page 3</button>
-          <button onclick="go4()">page 4</button>
-          <h1>Page 4</h1>
-          <img src="WumpusGamer.png">
-          <h1>Page 4</h1>
-          <img src="WumpusGamer.png">
-          <h1>Page 4</h1>
-          <img src="WumpusGamer.png">
-      </div>
+    <!-- page 4-->
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
+      <h1>Page 4</h1>
+      <img src="WumpusGamer.png">
+      <h1>Page 4</h1>
+      <img src="WumpusGamer.png">
+      <h1>Page 4</h1>
+      <img src="WumpusGamer.png">
+    </div>
+
+    <!-- page 5-->
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page5">
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
+      <h1>Page 5</h1>
+      <img src="frim.jpg">
+    </div>
+
+    <!-- page 6-->
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page6">
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
+      <h1>Page 6</h1>
+      <img src="frim.jpg">
+    </div>
+
+    <!-- page 7-->
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page7">
+      <button onclick="go1()">page 1</button>
+      <button onclick="go2()">page 2</button>
+      <button onclick="go3()">page 3</button>
+      <button onclick="go4()">page 4</button>
+      <button onclick="go5()">page 5</button>
+      <button onclick="go6()">page 6</button>
+      <button onclick="go7()">page 7</button>
+      <h1>Page 7</h1>
+      <img src="frim.jpg">
+    </div>
 
     <script>
       var id = document.getElementById("page1");
       var id2 = document.getElementById("page2");
       var id3 = document.getElementById("page3");
       var id4 = document.getElementById("page4");
+      var id5 = document.getElementById("page5");
+      var id6 = document.getElementById("page6");
+      var id7 = document.getElementById("page7");
       id.style.visibility = "visible";
       id2.style.visibility = "hidden";
       id3.style.visibility = "hidden";
       id4.style.visibility = "hidden";
+      id5.style.visibility = "hidden";
+      id6.style.visibility = "hidden";
+      id7.style.visibility = "hidden";
 
       function go1() {
         open1();
         close2();
         close3();
-        close4();        
+        close4();
+        close5();
+        close6();
+        close7();        
       }
       function go2() {
         close1();
         open2();
         close3();
-        close4(); 
+        close4();
+        close5();
+        close6();
+        close7();  
       }
       function go3() {
         close1();
         close2();
         open3();
-        close4(); 
+        close4();
+        close5();
+        close6();
+        close7(); 
       }
       function go4() {
         close1();
         close2();
         close3();
         open4(); 
+        close5();
+        close6();
+        close7(); 
+      }
+      function go5() {
+        close1();
+        close2();
+        close3();
+        close4();
+        open5();
+        close6();
+        close7();  
+      }
+      function go6() {
+        close1();
+        close2();
+        close3();
+        close4();
+        close5();
+        open6();
+        close7();  
+      }
+      function go7() {
+        close1();
+        close2();
+        close3();
+        close4();
+        close5();
+        close6();
+        open7();  
       }
     </script>
     <script>
@@ -121,6 +217,30 @@
       function close4() {
         id4.style.position = "fixed";
         id4.style.visibility = "hidden";
+      }
+      function open5() {
+        id5.style.position = "absolute";
+        id5.style.visibility = "visible";
+      }
+      function close5() {
+        id5.style.position = "fixed";
+        id5.style.visibility = "hidden";
+      }
+      function open6() {
+        id6.style.position = "absolute";
+        id6.style.visibility = "visible";
+      }
+      function close6() {
+        id6.style.position = "fixed";
+        id6.style.visibility = "hidden";
+      }
+      function open7() {
+        id7.style.position = "absolute";
+        id7.style.visibility = "visible";
+      }
+      function close7() {
+        id7.style.position = "fixed";
+        id7.style.visibility = "hidden";
       }
     </script>
 </body> 
