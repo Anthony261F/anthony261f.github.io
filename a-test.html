@@ -7,47 +7,51 @@
 <body style="margin:0px; display:contents; background-color: aqua;">
   
   <!-- page 1-->
-    <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
-      
+    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
       <button onclick="go1()">page 1</button>
       <button onclick="go2()">page 2</button>
       <button onclick="go3()">page 3</button>
       <button onclick="go4()">page 4</button>
       <h1>Page 1</h1>
-    <img src="muffin.jpg">
-    </div>
+      <img src="muffin.jpg">
+      <h1>Page 1</h1>
+      <img src="muffin.jpg">
+      <h1>Page 1</h1>
+      <img src="muffin.jpg">
+      </div>
           
      <!-- page 2-->
-     <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
-      
+     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
       <button onclick="go1()">page 1</button>
       <button onclick="go2()">page 2</button>
       <button onclick="go3()">page 3</button>
       <button onclick="go4()">page 4</button>
       <h1>Page 2</h1>
-    <img src="muffin.jpg">
+      <img src="frim.jpg">
     </div>
 
       <!-- page 3-->
-      <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
-       
+      <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
         <button onclick="go1()">page 1</button>
         <button onclick="go2()">page 2</button>
         <button onclick="go3()">page 3</button>
         <button onclick="go4()">page 4</button>
         <h1>Page 3</h1>
-      <img src="muffin.jpg">
+        <img src="musique.png">
       </div>
             
        <!-- page 4-->
-       <div style="position:fixed; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
-        
+       <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
           <button onclick="go1()">page 1</button>
           <button onclick="go2()">page 2</button>
           <button onclick="go3()">page 3</button>
           <button onclick="go4()">page 4</button>
           <h1>Page 4</h1>
-      <img src="muffin.jpg">
+          <img src="WumpusGamer.png">
+          <h1>Page 4</h1>
+          <img src="WumpusGamer.png">
+          <h1>Page 4</h1>
+          <img src="WumpusGamer.png">
       </div>
 
     <script>
@@ -59,29 +63,64 @@
       id2.style.visibility = "hidden";
       id3.style.visibility = "hidden";
       id4.style.visibility = "hidden";
-      function go2() {
-        id.style.visibility = "hidden";
-        id2.style.visibility = "visible";
-        id3.style.visibility = "hidden";
-      id4.style.visibility = "hidden";
-      }
+
       function go1() {
-        id.style.visibility = "visible";
-        id2.style.visibility = "hidden";
-        id3.style.visibility = "hidden";
-      id4.style.visibility = "hidden";
+        open1();
+        close2();
+        close3();
+        close4();        
+      }
+      function go2() {
+        close1();
+        open2();
+        close3();
+        close4(); 
       }
       function go3() {
-        id.style.visibility = "hidden";
-        id3.style.visibility = "visible";
-        id2.style.visibility = "hidden";
-      id4.style.visibility = "hidden";
+        close1();
+        close2();
+        open3();
+        close4(); 
       }
       function go4() {
-        id4.style.visibility = "visible";
+        close1();
+        close2();
+        close3();
+        open4(); 
+      }
+    </script>
+    <script>
+      function open1() {
+        id.style.position = "absolute";
+        id.style.visibility = "visible";
+      }
+      function close1() {
+        id.style.position = "fixed";
+        id.style.visibility = "hidden";
+      }
+      function open2() {
+        id2.style.position = "absolute";
+        id2.style.visibility = "visible";
+      }
+      function close2() {
+        id2.style.position = "fixed";
         id2.style.visibility = "hidden";
+      }
+      function open3() {
+        id3.style.position = "absolute";
+        id3.style.visibility = "visible";
+      }
+      function close3() {
+        id3.style.position = "fixed";
         id3.style.visibility = "hidden";
-      id.style.visibility = "hidden";
+      }
+      function open4() {
+        id4.style.position = "absolute";
+        id4.style.visibility = "visible";
+      }
+      function close4() {
+        id4.style.position = "fixed";
+        id4.style.visibility = "hidden";
       }
     </script>
 </body> 
