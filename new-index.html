@@ -27,23 +27,17 @@
     <script>
       function darkMode() {
      var element = document.body;
-     var content = document.getElementById("DarkModetext");
      element.className = "dark-mode";
-     content.innerText = "Dark Mode is ON";
    }
    function lightMode() {
      var element = document.body;
-     var content = document.getElementById("DarkModetext");
      element.className = "light-mode";
-     content.innerText = "Dark Mode is OFF";
    }
      </script>
      <style>
       body {
-        
         background-color: white;
         color: black;
-        
       }
       .dark-mode {
         background-color: black;
@@ -77,6 +71,8 @@
           <nav id="menu">
             <h2 class="titre" style="text-align: center; font-size: 30px">Menu</h2>
             <HR>
+                <h4 id="blanc">Vous êtes sur la page <span id="num-page">1</span></h4>
+            <HR>
             <div style="text-align: center;">
               <li onclick="go1()"> <a id="blanc" href="#haut" title="Acceuil">Acceuil</a></li>
               <li onclick="parent.ouvrirFootball()"><a href="#haut" id="blanc">Football</a></li>
@@ -101,7 +97,7 @@
 
 
   <!-- page 1-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page1">
 
         <div class="centre">
             <h1 id="nom-page">🏠 Acceuil</h1>
@@ -118,7 +114,7 @@
         </div>
     
      <!-- page 2-->
-     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
+     <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page2">
 
         <div class="centre">
             <h1 id="nom-page">🔢 Scratch</h1>
@@ -222,7 +218,7 @@
      
 
     <!-- page 3-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page3">
 
       <div class="centre">
         <h1 id="nom-page">🐱 Photo Muffin</h1>
@@ -244,7 +240,7 @@
     </div>
             
     <!-- page 4-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page4">
 
       <div class="centre">
         <h1 id="nom-page">🐱 Photo Frimousse</h1>
@@ -265,7 +261,7 @@
     </div>
 
     <!-- page 5-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page5">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page5">
 
       <div class="centre">
         <h1 id="nom-page">🎮 Jeux</h1>
@@ -335,7 +331,7 @@
     </div>
 
     <!-- page 6-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page6">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page6">
 
       <div class="centre">
         <h1 id="nom-page">🎶 Musique</h1>
@@ -403,7 +399,7 @@
     </div>
 
     <!-- page 7-->
-    <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page7">
+    <div style="position:absolute; z-index: 1000; background-color: transparent; height:100%; width:100%;" id="page7">
 
       <div class="centre">
         <h1 id="nom-page">❓ Information</h1>
@@ -435,6 +431,7 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+    var id_num_page = document.getElementById("num-page");
       var id = document.getElementById("page1");
       var id2 = document.getElementById("page2");
       var id3 = document.getElementById("page3");
@@ -456,6 +453,7 @@
         id6.style.position = "fixed";
         id7.style.visibility = "hidden";
         id7.style.position = "fixed";
+        var page = 1;
 
       function go1() {
         open1();
@@ -464,7 +462,9 @@
         close4();
         close5();
         close6();
-        close7();        
+        close7();  
+        page = 1; 
+        id_num_page.innerText = page;   
       }
       function go2() {
         close1();
@@ -473,7 +473,9 @@
         close4();
         close5();
         close6();
-        close7();  
+        close7();
+        page = 2;  
+        id_num_page.innerText = page; 
       }
       function go3() {
         close1();
@@ -482,7 +484,9 @@
         close4();
         close5();
         close6();
-        close7(); 
+        close7();
+        page = 3;  
+        id_num_page.innerText = page;  
       }
       function go4() {
         close1();
@@ -492,6 +496,8 @@
         close5();
         close6();
         close7(); 
+        page = 4;  
+        id_num_page.innerText = page; 
       }
       function go5() {
         close1();
@@ -501,6 +507,8 @@
         open5();
         close6();
         close7();  
+        page = 5;  
+        id_num_page.innerText = page; 
       }
       function go6() {
         close1();
@@ -510,6 +518,8 @@
         close5();
         open6();
         close7();  
+        page = 6;  
+        id_num_page.innerText = page; 
       }
       function go7() {
         close1();
@@ -519,6 +529,8 @@
         close5();
         close6();
         open7();  
+        page = 7;  
+        id_num_page.innerText = page; 
       }
     </script>
     <script>
