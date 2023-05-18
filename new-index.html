@@ -11,12 +11,16 @@
   <link rel="icon" href="icon-A-x32.png" sizes="32x32">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="bio-css.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <script>
-    function ouvrirDiscord ()
-    {
+    function ouvrirDiscord () {
     var link = "https://discord.gg/TNxGWbmtVf";
+    open(link,"_blank")
+    }
+    function ouvrirFootball () {
+    var link = "https://scratch.mit.edu/projects/695741413/";
     open(link,"_blank")
     }
     </script>
@@ -47,20 +51,58 @@
       }
     </style> 
 </head> 
-<body style="margin:0px; display:contents; background-color: aqua;">
+<body style="margin:0px; display:contents; background-color: aqua;" id="haut">
   
+     <!-- Wrapper -->
+     <div id="wrapper">
+
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
+  
+              <!-- Logo -->
+                
+  
+              <!-- Nav -->
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+  
+            </div>
+          </header>
+  
+        <!-- Menu -->
+          <nav id="menu">
+            <h2 class="titre" style="text-align: center; font-size: 30px">Menu</h2>
+            <HR>
+            <div style="text-align: center;">
+              <li onclick="go1()"> <a id="blanc" href="#haut" title="Acceuil">Acceuil</a></li>
+              <li onclick="parent.ouvrirFootball()"><a href="#haut" id="blanc">Football</a></li>
+              <li onclick="go2()"> <a id="blanc" href="#haut" title="Mes Projets Scratch">Scratch</a></li>
+              <li onclick="go3()"> <a id="blanc" href="#haut" title="Photo de Muffin">Photo Muffin</a></li>
+              <li onclick="go4()"> <a id="blanc" href="#haut" title="Photo de Frimousse">Photo Frimousse</a></li>
+              <li onclick="go5()"> <a id="blanc" href="#haut" title="Liste des Jeux">Jeux</a></li>
+              <li onclick="go6()"> <a id="blanc" href="#haut" title="Mes créations Musicales">Musique</a></li>
+              <li onclick="go7()"> <a id="blanc" href="#haut" title="Information du Site">Information</a></li>
+              <HR>
+              <li onclick="parent.ouvrirDiscord()"><a href="#haut" id="blanc">Discord</a></li>
+              <div style="margin-top: 90%;">
+                <button onclick="lightMode()" id="jaune" style="background-color: white;">🌞</button>
+                <button onclick="darkMode()" id="jaune" style="background-color: black;">🌙</button>
+              </div>
+            </div>
+          </nav>
+  
+            <!-- Main -->
+              <div id="main">
+                <div> <!-- mettre ~ class="inner" ~ pour écart sur le coté -->
+
+
   <!-- page 1-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page1">
-      <button onclick="go1()">Acceuil</button>
-      <button>Football</button>
-      <button onclick="go2()">Scratch</button>
-      <button onclick="go3()">Photo Muffin</button>
-      <button onclick="go4()">Photo Frimousse</button>
-      <button onclick="go5()">Jeux</button>
-      <button onclick="go6()">Musique</button>
-      <button onclick="go7()">Information</button>
-      <span> | </span>
-      <button>Discord</button>
+
         <div class="centre">
             <h1 id="nom-page">🏠 Acceuil</h1>
         </div>
@@ -77,13 +119,6 @@
     
      <!-- page 2-->
      <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page2">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
 
         <div class="centre">
             <h1 id="nom-page">🔢 Scratch</h1>
@@ -188,13 +223,6 @@
 
     <!-- page 3-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page3">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
 
       <div class="centre">
         <h1 id="nom-page">🐱 Photo Muffin</h1>
@@ -217,14 +245,7 @@
             
     <!-- page 4-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page4">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
-      
+
       <div class="centre">
         <h1 id="nom-page">🐱 Photo Frimousse</h1>
       </div>
@@ -245,14 +266,7 @@
 
     <!-- page 5-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page5">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
-      
+
       <div class="centre">
         <h1 id="nom-page">🎮 Jeux</h1>
       </div>
@@ -322,14 +336,7 @@
 
     <!-- page 6-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page6">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
-      
+
       <div class="centre">
         <h1 id="nom-page">🎶 Musique</h1>
       </div>
@@ -397,13 +404,6 @@
 
     <!-- page 7-->
     <div style="position:absolute; z-index: 1000; background-color: white; height:100%; width:100%;" id="page7">
-      <button onclick="go1()">page 1</button>
-      <button onclick="go2()">page 2</button>
-      <button onclick="go3()">page 3</button>
-      <button onclick="go4()">page 4</button>
-      <button onclick="go5()">page 5</button>
-      <button onclick="go6()">page 6</button>
-      <button onclick="go7()">page 7</button>
 
       <div class="centre">
         <h1 id="nom-page">❓ Information</h1>
@@ -425,8 +425,14 @@
             </div>
     </div>
 
+              </div></div>
 
-    <!-- Script -->
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
       var id = document.getElementById("page1");
