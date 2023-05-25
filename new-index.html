@@ -114,8 +114,9 @@
             <h1 id="nom-page">🔢 Scratch</h1>
         </div>
      
-        <img src="scratch.png" class="fond">
+        
         <div class="flex">
+          <img src="scratch.png" class="fond">
           <h1 class="titre">Voici mes différents projets Scratch</h1>
         </div>
         <div class="container">
@@ -331,8 +332,9 @@
         <h1 id="nom-page">🎶 Musique</h1>
       </div>
     
-      <img src="musique.png" class="fond">
+      
         <div class="flex">
+          <img src="musique.png" class="fond">
             <h1 class="titre">Création musicale</h1>
         </div>
         
@@ -348,8 +350,8 @@
                     <source src="Mélodie _ Créer par AnthoNight261-360p.mp3"></source>
                 </audio>
                 <div>
-                <label for="file">File progress:</label>
-                <progress id="barreProgress"> 0% </progress>
+                <label for="file">Progression :</label>
+                <progress id="barreProgress" value="0" max="100"> 0% </progress>
                 </div>
                 
                 <div>
@@ -749,9 +751,11 @@
             var percent = Math.ceil(fraction * 100);
 
             var progress = document.querySelector('#progressBar');
+            var barprog = document.querySelector('#barreProgress');
 
             progress.style.whdth = percent + '%';
             progress.textContent = percent + '%';
+            barprog.value = percent;
 
             document.querySelector('#progressTime').textContent = formatTime(time);
         }
