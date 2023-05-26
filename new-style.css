@@ -275,3 +275,8 @@ li {
 margin-top: 100%;
 margin-left: 90%;
 }
+
+#barreProgress {
+  height:30px;
+  width:100%;
+}

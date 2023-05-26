@@ -343,7 +343,7 @@
               <img src="AnthoNight261.png" width="55" height="55">
               <h1><h1 id="base" class="titreskin">  Mélodie | Créer par AnthoNight261</h1>
             </div>
-            <div class="container_body">
+            <div class="container_body" style="display: contents;">
               <div>
                 <audio id="audioPlayer" ontimeupdate="update(this)">
                     <source src="Mélodie _ Créer par AnthoNight261-360p.ogg"></source>
@@ -351,18 +351,17 @@
                 </audio>
                 <div>
                 <label for="file">Progression :</label>
+                <div>
+                  <div id="progressBarControl">
+                    <span id="progressBar">0%</span><span> (</span><span id="progressTime">00:00</span><span>)</span>
+                  </div>
+                  
+              </div>
                 <progress id="barreProgress" value="0" max="100"> 0% </progress>
                 </div>
                 
-                <div>
-                    <div id="progressBarControl">
-                         <div id="progressBar">0%</div>
-                    </div>
-                    <span id="progressTime">00:00</span>
-                </div>
-        
-                <button class="control" onclick="play('audioPlayer', this)">Play</button>
-                <button class="control" onclick="resume('audioPlayer')">Stop</button>
+                <button style=" padding:0;" class="control" onclick="play('audioPlayer', this)"><img id="img-play" height="50px" src="play.png"></button>
+                <button style=" padding:0;" class="control" onclick="resume('audioPlayer')"><img id="img-play" height="50px" src="stop.png"></button>
                 <br>
                 <span class="volume">
                   <button class="stick1" onclick="volume('audioPlayer',0)"> 🔈 </button>
@@ -725,10 +724,10 @@
 
             if (player.paused) {
                 player.play();
-                control.textContent = 'Pause';
+                document.getElementById("img-play").src = "pause.png";
             } else {
                 player.pause();
-                control.textContent = 'Play';
+                document.getElementById("img-play").src = "play.png";
             }
         }
 
