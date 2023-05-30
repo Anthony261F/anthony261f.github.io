@@ -4,7 +4,74 @@
     </head>
     <body>
         <div style="text-align: center;">
+            <h1>Encoder / décoder en Javascript</h1>
+            <HR>
+            <h3>Générer une clée de criptage</h3>
+            <br>
+            <h6>ENtrer la longueur de la clée souhaité (4 - 100)</h6>
+            <input type="number" id="longueur-clee" requiredminlength="4" maxlength="100" size="10">
+            <br><br>
+            <button onclick="generateEncryptionKey()">Générer</button>
+            <br>
+            <h6>Clée :</h6>
+            <span id="resultclee">...</span>
 
+            <script>
+                // Génère une clé de cryptage aléatoire
+                function generateEncryptionKey() {
+                    var key = '';
+                    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    var length = document.getElementById("longueur-clee").value;
+
+                    for (var i = 0; i < length; i++) {
+                        key += characters.charAt(Math.floor(Math.random() * characters.length));
+                    }
+                    document.getElementById("resultclee").innerText = key;
+                }
+            </script>
+
+            <br><HR><br>
+                <h3>Encoder un texte</h3>
+                <br>
+                <h6>Entrer la clé de cryptage</h6>
+                <input type="password" id="clee1" required minlength="4" maxlength="100" size="25">
+                <input type="checkbox" onclick="montre_mdp()" id="montrer-clee1">
+                <br>
+                <h6>Texte à encoder</h6>
+                <input type="text" id="text1" size="50">
+                <br><br>
+                <button onclick="encryptText()">Générer</button>
+                <br>
+                <h6>Texte encodé :</h6>
+                <span id="code1">...</span>
+                
+                <script>
+                  function montre_mdp() {
+                    var temp = document.getElementById("clee1");
+                    if (temp.type === "password") {
+                      temp.type = "text";
+                    } else {
+                      temp.type = "password";
+                    }
+                  }
+                
+                  function encryptText() {
+                    var text = document.getElementById("text1").value;
+                    var encryptionKey = document.getElementById("clee1").value;
+                    var encryptedText = '';
+                
+                    for (var i = 0; i < text.length; i++) {
+                      var char = text.charAt(i);
+                      var charCode = char.charCodeAt(0);
+                      var encryptedCharCode = charCode + parseInt(encryptionKey); // Convertit la clé de cryptage en nombre entier
+                
+                      encryptedText += String.fromCharCode(encryptedCharCode);
+                    }
+                
+                    document.getElementById("code1").innerText = encryptedText;
+                  }
+                </script>
+                
         </div>
     </body>
 </html>
