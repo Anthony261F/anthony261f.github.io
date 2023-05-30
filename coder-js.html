@@ -1,19 +1,19 @@
 <html>
     <head>
-        <title>Java : Encoder / décoder</title>
+        <title>Encoder / décoder en JavaScript</title>
     </head>
     <body>
         <div style="text-align: center;">
-            <h1>Encoder / décoder en Javascript</h1>
-            <HR>
-            <h3>Générer une clée de criptage</h3>
+            <h1>Encoder / décoder en JavaScript</h1>
+            <hr>
+            <h3>Générer une clé de cryptage</h3>
             <br>
-            <h6>ENtrer la longueur de la clée souhaité (4 - 100)</h6>
-            <input type="number" id="longueur-clee" requiredminlength="4" maxlength="100" size="10">
+            <h6>Entrer la longueur de la clé souhaitée (4 - 100)</h6>
+            <input type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
             <br><br>
             <button onclick="generateEncryptionKey()">Générer</button>
             <br>
-            <h6>Clée :</h6>
+            <h6>Clé :</h6>
             <span id="resultclee">...</span>
 
             <script>
@@ -30,48 +30,86 @@
                 }
             </script>
 
-            <br><HR><br>
-                <h3>Encoder un texte</h3>
-                <br>
-                <h6>Entrer la clé de cryptage</h6>
-                <input type="password" id="clee1" required minlength="4" maxlength="100" size="25">
-                <input type="checkbox" onclick="montre_mdp()" id="montrer-clee1">
-                <br>
-                <h6>Texte à encoder</h6>
-                <input type="text" id="text1" size="50">
-                <br><br>
-                <button onclick="encryptText()">Générer</button>
-                <br>
-                <h6>Texte encodé :</h6>
-                <span id="code1">...</span>
-                
-                <script>
-                  function montre_mdp() {
-                    var temp = document.getElementById("clee1");
-                    if (temp.type === "password") {
-                      temp.type = "text";
-                    } else {
-                      temp.type = "password";
-                    }
+            <br><hr><br>
+            <h3>Encoder / Décoder un texte</h3>
+            <br>
+            <h6>Entrer la clé de cryptage</h6>
+            <input type="password" id="clee1" required minlength="4" maxlength="100" size="25">
+            <input type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
+            <br>
+            <h6>Texte à traiter</h6>
+            <input type="text" id="text1" size="50">
+            <br><br>
+            <button onclick="encryptText()">Encoder</button>
+            <button onclick="decryptText()">Décoder</button>
+            <br>
+            <h6>Résultat :</h6>
+            <span id="code1">...</span>
+
+            <script>
+              function togglePasswordVisibility() {
+                var passwordInput = document.getElementById("clee1");
+                var toggleCheckbox = document.getElementById("toggle-clee1");
+
+                if (toggleCheckbox.checked) {
+                  passwordInput.type = "text";
+                } else {
+                  passwordInput.type = "password";
+                }
+              }
+
+              function encryptText() {
+                var textInput = document.getElementById("text1");
+                var encryptionKeyInput = document.getElementById("clee1");
+                var encryptedText = '';
+
+                var text = textInput.value;
+                var encryptionKey = encryptionKeyInput.value;
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+                for (var i = 0; i < text.length; i++) {
+                  var char = text.charAt(i);
+
+                  if (characters.indexOf(char) !== -1) {
+                    var charIndex = characters.indexOf(char);
+                    var keyIndex = i % encryptionKey.length;
+                    var keyChar = encryptionKey.charAt(keyIndex);
+                    var encryptedIndex = (charIndex + characters.indexOf(keyChar)) % characters.length;
+                    encryptedText += characters.charAt(encryptedIndex);
+                  } else {
+                    encryptedText += char; // Conserve les caractères spéciaux tels quels
                   }
-                
-                  function encryptText() {
-                    var text = document.getElementById("text1").value;
-                    var encryptionKey = document.getElementById("clee1").value;
-                    var encryptedText = '';
-                
-                    for (var i = 0; i < text.length; i++) {
-                      var char = text.charAt(i);
-                      var charCode = char.charCodeAt(0);
-                      var encryptedCharCode = charCode + parseInt(encryptionKey); // Convertit la clé de cryptage en nombre entier
-                
-                      encryptedText += String.fromCharCode(encryptedCharCode);
-                    }
-                
-                    document.getElementById("code1").innerText = encryptedText;
+                }
+
+                document.getElementById("code1").innerText = encryptedText;
+              }
+
+              function decryptText() {
+                var encryptedTextInput = document.getElementById("text1");
+                var encryptionKeyInput = document.getElementById("clee1");
+                var decryptedText = '';
+
+                var encryptedText = encryptedTextInput.value;
+                var encryptionKey = encryptionKeyInput.value;
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+                for (var i = 0; i < encryptedText.length; i++) {
+                  var char = encryptedText.charAt(i);
+
+                  if (characters.indexOf(char) !== -1) {
+                    var charIndex = characters.indexOf(char);
+                    var keyIndex = i % encryptionKey.length;
+                    var keyChar = encryptionKey.charAt(keyIndex);
+                    var decryptedIndex = (charIndex - characters.indexOf(keyChar) + characters.length) % characters.length;
+                    decryptedText += characters.charAt(decryptedIndex);
+                  } else {
+                    decryptedText += char; // Conserve les caractères spéciaux tels quels
                   }
-                </script>
-                
+                }
+
+                document.getElementById("code1").innerText = decryptedText;
+              }
+            </script>
         </div>
     </body>
 </html>
