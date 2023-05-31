@@ -31,25 +31,52 @@
             </script>
 
             <br><hr><br>
-            <h3>Encoder / Décoder un texte</h3>
+            <h3>Encoder  un texte</h3>
             <br>
             <h6>Entrer la clé de cryptage</h6>
-            <input type="password" id="clee1" required minlength="4" maxlength="100" size="25">
+            <input type="password" id="clee1" required minlength="4" maxlength="100" size="100">
             <input type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
             <br>
             <h6>Texte à traiter</h6>
             <input type="text" id="text1" size="50">
             <br><br>
             <button onclick="encryptText()">Encoder</button>
-            <button onclick="decryptText()">Décoder</button>
+            
             <br>
             <h6>Résultat :</h6>
             <span id="code1">...</span>
+            <br><HR>
+            <br><br><br>
+            <h3>Décoder  un texte</h3>
+            <br>
+            <h6>Entrer la clé de cryptage</h6>
+            <input type="password" id="clee2" required minlength="4" maxlength="100" size="100">
+            <input type="checkbox" onclick="togglePasswordVisibility2()" id="toggle-clee2">
+            <br>
+            <h6>Texte à traiter</h6>
+            <input type="text" id="text2" size="50">
+            <br><br>
+            
+            <button onclick="decryptText()">Décoder</button>
+            <br>
+            <h6>Résultat :</h6>
+            <span id="code2">...</span>
 
             <script>
               function togglePasswordVisibility() {
                 var passwordInput = document.getElementById("clee1");
                 var toggleCheckbox = document.getElementById("toggle-clee1");
+
+                if (toggleCheckbox.checked) {
+                  passwordInput.type = "text";
+                } else {
+                  passwordInput.type = "password";
+                }
+              }
+
+              function togglePasswordVisibility2() {
+                var passwordInput = document.getElementById("clee2");
+                var toggleCheckbox = document.getElementById("toggle-clee2");
 
                 if (toggleCheckbox.checked) {
                   passwordInput.type = "text";
@@ -65,7 +92,7 @@
 
                 var text = textInput.value;
                 var encryptionKey = encryptionKeyInput.value;
-                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789²&é(-è_çà)=^$*€ù,;:!<<?./§%¨£µ+°#{[|`\^@]}';
 
                 for (var i = 0; i < text.length; i++) {
                   var char = text.charAt(i);
@@ -85,13 +112,13 @@
               }
 
               function decryptText() {
-                var encryptedTextInput = document.getElementById("text1");
-                var encryptionKeyInput = document.getElementById("clee1");
+                var encryptedTextInput = document.getElementById("text2");
+                var encryptionKeyInput = document.getElementById("clee2");
                 var decryptedText = '';
 
                 var encryptedText = encryptedTextInput.value;
                 var encryptionKey = encryptionKeyInput.value;
-                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789²&é(-è_çà)=^$*€ù,;:!<<?./§%¨£µ+°#{[|`\^@]}';
 
                 for (var i = 0; i < encryptedText.length; i++) {
                   var char = encryptedText.charAt(i);
@@ -107,7 +134,7 @@
                   }
                 }
 
-                document.getElementById("code1").innerText = decryptedText;
+                document.getElementById("code2").innerText = decryptedText;
               }
             </script>
         </div>
