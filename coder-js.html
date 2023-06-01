@@ -4,16 +4,16 @@
     </head>
     <body>
         <div style="text-align: center;">
-            <h1>Encoder / décoder en JavaScript</h1>
+            <strong><h1 style="text-decoration: underline;">Encoder / décoder en JavaScript</h1></strong>
             <hr>
-            <h3>Générer une clé de cryptage</h3>
+            <h2 style="text-decoration: underline;">Générer une clé de cryptage</h2>
             <br>
-            <h6>Entrer la longueur de la clé souhaitée (4 - 100)</h6>
+            <h4>Entrer la longueur de la clé souhaitée (4 - 100)</h4>
             <input type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
             <br><br>
             <button onclick="generateEncryptionKey()">Générer</button>
             <br>
-            <h6>Clé :</h6>
+            <h4>Clé :</h4>
             <span id="resultclee">...</span>  <button id="copie1" onclick="copyEncryptionKey()">Copier</button>
 
             <script>
@@ -41,38 +41,38 @@
                 }
             </script>
 
-            <br><hr><br>
-            <h3>Encoder  un texte</h3>
+            <br><br><hr><br>
+            <h2 style="text-decoration: underline;">Encoder  un texte</h2>
             <br>
-            <h6>Entrer la clé de cryptage</h6>
+            <h4>Entrer la clé de cryptage</h4>
             <input type="password" id="clee1" required minlength="4" maxlength="100" size="100">
             <input type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
             <br>
-            <h6>Texte à traiter</h6>
+            <h4>Texte à traiter</h4>
             <input type="text" id="text1" size="50">
             <br><br>
             <button onclick="encryptText()">Encoder</button>
             
             <br>
-            <h6>Résultat :</h6>
+            <h4>Résultat :</h4>
             <span id="code1">...</span>  <button id="copie2" onclick="copyEncryptionKey2()">Copier</button>
-            <br><HR>
-            <br><br><br>
-            <h3>Décoder  un texte</h3>
+            <br><br><HR>
             <br>
-            <h6>Entrer la clé de cryptage</h6>
+            <h2 style="text-decoration: underline;">Décoder  un texte</h2>
+            <br>
+            <h4>Entrer la clé de cryptage</h4>
             <input type="password" id="clee2" required minlength="4" maxlength="100" size="100">
             <input type="checkbox" onclick="togglePasswordVisibility2()" id="toggle-clee2">
             <br>
-            <h6>Texte à traiter</h6>
+            <h4>Texte à traiter</h4>
             <input type="text" id="text2" size="50">
             <br><br>
             
             <button onclick="decryptText()">Décoder</button>
             <br>
-            <h6>Résultat :</h6>
+            <h4>Résultat :</h4>
             <span id="code2">...</span>  <button id="copie3" onclick="copyEncryptionKey3()">Copier</button>
-
+            <br><br>
             <script>
               function togglePasswordVisibility() {
                 var passwordInput = document.getElementById("clee1");
