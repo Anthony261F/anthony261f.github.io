@@ -35,6 +35,14 @@
         background-color: black;
         color: white;
       }
+      .boutton-code {
+        font-size: auto;
+        height: 20px;
+        letter-spacing: 0em;
+        line-height: 0em;
+        padding: 0 1em 0 1em;
+        text-transform: none;
+      }
     </style> 
 </head> 
 <body style="margin:0px; display:contents; background-color: aqua;" id="haut">
@@ -78,7 +86,8 @@
               <li onclick="parent.ouvrirDiscord()"><a href="#haut" id="blanc">Discord</a></li>
               <HR>
                 <li onclick="go8()"><a href="#haut" id="blanc">Calculatrice</a></li>
-              <div style="margin-top: 60%;">
+                <li onclick="go9()"><a href="#haut" id="blanc">Cryptage</a></li>
+              <div style="margin-top: 50%;">
                 <a href="#haut"><button onclick="lightMode()" id="jaune" style="background-color: white;">🌞</button></a>
                 <a href="#haut"><button onclick="darkMode()" id="jaune" style="background-color: black;">🌙</button></a>
               </div>
@@ -491,6 +500,175 @@
             </div>
     </div>
 
+<!-- page 9-->
+<div style="position:absolute; z-index: 1000; height:auto; width:100%;" id="page9">
+    <div style="text-align: center;">
+      <strong><h1 style="text-decoration: underline;">Encoder / décoder en JavaScript</h1></strong>
+      <hr>
+      <h2 style="text-decoration: underline;">Générer une clé de cryptage</h2>
+      <br>
+      <h4>Entrer la longueur de la clé souhaitée (4 - 100)</h4>
+      <input type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
+      <br><br>
+      <button class="boutton-code" onclick="generateEncryptionKey()">Générer</button>
+      <br>
+      <h4>Clé :</h4>
+      <span id="resultclee">...</span>  <button class="boutton-code" id="copie1" onclick="copyEncryptionKey()">Copier</button>
+
+      <script>
+          // Génère une clé de cryptage aléatoire
+          function generateEncryptionKey() {
+              var key = '';
+              var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+              var length = document.getElementById("longueur-clee").value;
+
+              for (var i = 0; i < length; i++) {
+                  key += characters.charAt(Math.floor(Math.random() * characters.length));
+              }
+              document.getElementById("resultclee").innerText = key;
+              
+          }
+          function copyEncryptionKey() {
+              var encryptionKey = document.getElementById("resultclee").innerText;
+              var tempInput = document.createElement("input");
+              tempInput.setAttribute("value", encryptionKey);
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand("copy");
+              document.body.removeChild(tempInput);
+              alert("La clé de cryptage a été copiée dans le presse-papiers.");
+          }
+      </script>
+
+      <br><br><hr><br>
+      <h2 style="text-decoration: underline;">Encoder  un texte</h2>
+      <br>
+      <h4>Entrer la clé de cryptage</h4>
+      <input type="password" id="clee1" required minlength="4" maxlength="100" size="100">
+      <input type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
+      <br>
+      <h4>Texte à traiter</h4>
+      <input type="text" id="text1" size="50">
+      <br><br>
+      <button class="boutton-code" onclick="encryptText()">Encoder</button>
+      
+      <br>
+      <h4>Résultat :</h4>
+      <span id="code1">...</span>  <button class="boutton-code" id="copie2" onclick="copyEncryptionKey2()">Copier</button>
+      <br><br><HR>
+      <br>
+      <h2 style="text-decoration: underline;">Décoder  un texte</h2>
+      <br>
+      <h4>Entrer la clé de cryptage</h4>
+      <input type="password" id="clee2" required minlength="4" maxlength="100" size="100">
+      <input type="checkbox" onclick="togglePasswordVisibility2()" id="toggle-clee2">
+      <br>
+      <h4>Texte à traiter</h4>
+      <input type="text" id="text2" size="50">
+      <br><br>
+      
+      <button class="boutton-code" onclick="decryptText()">Décoder</button>
+      <br>
+      <h4>Résultat :</h4>
+      <span id="code2">...</span>  <button class="boutton-code" id="copie3" onclick="copyEncryptionKey3()">Copier</button>
+      <br><br>
+      <script>
+        function togglePasswordVisibility() {
+          var passwordInput = document.getElementById("clee1");
+          var toggleCheckbox = document.getElementById("toggle-clee1");
+
+          if (toggleCheckbox.checked) {
+            passwordInput.type = "text";
+          } else {
+            passwordInput.type = "password";
+          }
+        }
+
+        function togglePasswordVisibility2() {
+          var passwordInput = document.getElementById("clee2");
+          var toggleCheckbox = document.getElementById("toggle-clee2");
+
+          if (toggleCheckbox.checked) {
+            passwordInput.type = "text";
+          } else {
+            passwordInput.type = "password";
+          }
+        }
+        function copyEncryptionKey2() {
+              var encryptionKey = document.getElementById("code1").innerText;
+              var tempInput = document.createElement("input");
+              tempInput.setAttribute("value", encryptionKey);
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand("copy");
+              document.body.removeChild(tempInput);
+              alert("Le texte encoder a été copiée dans le presse-papiers.");
+          }
+          function copyEncryptionKey3() {
+              var encryptionKey = document.getElementById("code2").innerText;
+              var tempInput = document.createElement("input");
+              tempInput.setAttribute("value", encryptionKey);
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              document.execCommand("copy");
+              document.body.removeChild(tempInput);
+              alert("Le texte décoder a été copiée dans le presse-papiers.");
+          }
+
+        function encryptText() {
+          var textInput = document.getElementById("text1");
+          var encryptionKeyInput = document.getElementById("clee1");
+          var encryptedText = '';
+
+          var text = textInput.value;
+          var encryptionKey = encryptionKeyInput.value;
+          var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789²&é(-è_çà)=^$*€ù,;:!<<?./§%¨£µ+°#{[|`\^@]}';
+
+          for (var i = 0; i < text.length; i++) {
+            var char = text.charAt(i);
+
+            if (characters.indexOf(char) !== -1) {
+              var charIndex = characters.indexOf(char);
+              var keyIndex = i % encryptionKey.length;
+              var keyChar = encryptionKey.charAt(keyIndex);
+              var encryptedIndex = (charIndex + characters.indexOf(keyChar)) % characters.length;
+              encryptedText += characters.charAt(encryptedIndex);
+            } else {
+              encryptedText += char; // Conserve les caractères spéciaux tels quels
+            }
+          }
+
+          document.getElementById("code1").innerText = encryptedText;
+        }
+
+        function decryptText() {
+          var encryptedTextInput = document.getElementById("text2");
+          var encryptionKeyInput = document.getElementById("clee2");
+          var decryptedText = '';
+
+          var encryptedText = encryptedTextInput.value;
+          var encryptionKey = encryptionKeyInput.value;
+          var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789²&é(-è_çà)=^$*€ù,;:!<<?./§%¨£µ+°#{[|`\^@]}';
+
+          for (var i = 0; i < encryptedText.length; i++) {
+            var char = encryptedText.charAt(i);
+
+            if (characters.indexOf(char) !== -1) {
+              var charIndex = characters.indexOf(char);
+              var keyIndex = i % encryptionKey.length;
+              var keyChar = encryptionKey.charAt(keyIndex);
+              var decryptedIndex = (charIndex - characters.indexOf(keyChar) + characters.length) % characters.length;
+              decryptedText += characters.charAt(decryptedIndex);
+            } else {
+              decryptedText += char; // Conserve les caractères spéciaux tels quels
+            }
+          }
+
+          document.getElementById("code2").innerText = decryptedText;
+        }
+      </script>
+  </div>
+</div>
               </div></div>
 
     <!-- Scripts -->
@@ -510,6 +688,7 @@
       var id6 = document.getElementById("page6");
       var id7 = document.getElementById("page7");
       var id8 = document.getElementById("page8");
+      var id9 = document.getElementById("page9");
         id.style.visibility = "visible";
         id.style.position = "absolute";
         id2.style.visibility = "hidden";
@@ -526,6 +705,8 @@
         id7.style.position = "fixed";
         id8.style.visibility = "hidden";
         id8.style.position = "fixed";
+        id9.style.visibility = "hidden";
+        id9.style.position = "fixed";
         var page = 1;
 
       function go1() {
@@ -537,6 +718,7 @@
         close6();
         close7(); 
         close8(); 
+        close9(); 
         page = 1; 
         id_num_page.innerText = page;   
       }
@@ -549,6 +731,7 @@
         close6();
         close7();
         close8();
+        close9(); 
         page = 2;  
         id_num_page.innerText = page; 
       }
@@ -561,6 +744,7 @@
         close6();
         close7();
         close8();
+        close9(); 
         page = 3;  
         id_num_page.innerText = page;  
       }
@@ -573,6 +757,7 @@
         close6();
         close7(); 
         close8();
+        close9(); 
         page = 4;  
         id_num_page.innerText = page; 
       }
@@ -585,6 +770,7 @@
         close6();
         close7(); 
         close8(); 
+        close9(); 
         page = 5;  
         id_num_page.innerText = page; 
       }
@@ -597,6 +783,7 @@
         open6();
         close7();  
         close8();
+        close9(); 
         page = 6;  
         id_num_page.innerText = page; 
       }
@@ -609,6 +796,7 @@
         close6();
         open7();  
         close8();
+        close9(); 
         page = 7;  
         id_num_page.innerText = page; 
       }
@@ -621,7 +809,21 @@
         close6();
         close7();
         open8();  
+        close9(); 
         page = 8;  
+        id_num_page.innerText = page; 
+      }
+      function go9() {
+        close1();
+        close2();
+        close3();
+        close4();
+        close5();
+        close6();
+        close7();
+        close8();  
+        open9(); 
+        page = 9;  
         id_num_page.innerText = page; 
       }
     </script>
@@ -690,6 +892,14 @@
         id8.style.position = "fixed";
         id8.style.visibility = "hidden";
       }
+      function open9() {
+        id9.style.position = "absolute";
+        id9.style.visibility = "visible";
+      }
+      function close9() {
+        id9.style.position = "fixed";
+        id9.style.visibility = "hidden";
+      }
     </script>
         <script>
           function darkMode() {
@@ -701,6 +911,7 @@
          id6.className = "dark-mode";
          id7.className = "dark-mode";
          id8.className = "dark-mode";
+         id9.className = "dark-mode";
        }
        function lightMode() {
          id.className = "light-mode";
@@ -711,6 +922,7 @@
          id6.className = "light-mode";
          id7.className = "light-mode";
          id8.className = "light-mode";
+         id9.className = "light-mode";
        }
          </script>
     <script src="index.js"></script>
