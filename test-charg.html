@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de chargement</title>
+  <style>
+    /* CSS pour l'écran de chargement */
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .loader-text {
+      font-size: 24px;
+    }
+  </style>
+  <script>
+    // Script pour masquer l'écran de chargement une fois que la page est chargée
+    window.addEventListener("load", function() {
+  var loader = document.getElementById("loader");
+
+  // Ajoutez 1000 millisecondes (1 seconde) supplémentaire au délai
+  setTimeout(function() {
+    loader.style.display = "none";
+  }, 2000); // Le délai total est de 2000 millisecondes (2 secondes)
+});
+  </script>
+</head>
+<body>
+  <!-- Écran de chargement -->
+  <div id="loader">
+    <h2 class="loader-text">Chargement en cours...</h2>
+    <!-- Ajoutez ici une animation ou un gif de chargement -->
+  </div>
+
+  <!-- Contenu de la page -->
+  <h1>Contenu de la page</h1>
+  <p>Ceci est le contenu de votre page.</p>
+  <!-- Ajoutez le reste du contenu de votre page ici -->
+
+</body>
+</html>

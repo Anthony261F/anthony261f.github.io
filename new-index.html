@@ -15,6 +15,26 @@
   <link rel="stylesheet" href="clac.css" type="text/css">
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+  <style>
+    /* CSS pour l'écran de chargement */
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      z-index: 9999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .loader-text {
+      font-size: 24px;
+    }
+  </style>
+
   <script>
     function ouvrirDiscord () {
     var link = "https://discord.gg/TNxGWbmtVf";
@@ -47,6 +67,29 @@
 </head> 
 <body style="margin:0px; display:contents; background-color: aqua;" id="haut">
   
+
+  <script>
+    // Script pour masquer l'écran de chargement une fois que la page est chargée
+    window.addEventListener("load", function() {
+  var loader = document.getElementById("loader");
+
+  // Ajoutez 1000 millisecondes (1 seconde) supplémentaire au délai
+  setTimeout(function() {
+    loader.style.display = "none";
+    id.style.visibility = "visible";
+  id.style.position = "absolute";
+  }, 5000); // Le délai total est de 2000 millisecondes (2 secondes)
+
+});
+  </script>
+
+  <!-- Écran de chargement -->
+  <div id="loader">
+    <img src="chargement-vert.gif" class="loader-text">
+    <h2 class="loader-text">Chargement en cours...</h2>
+    <!-- Ajoutez ici une animation ou un gif de chargement -->
+  </div>
+
      <!-- Wrapper -->
      <div id="wrapper">
 
@@ -98,6 +141,8 @@
               <div id="main">
                 <div> <!-- mettre ~ class="inner" ~ pour écart sur le coté -->
 
+
+                 
 
   <!-- page 1-->
     <div style="position:absolute; z-index: 1000; height:auto; width:100%;" id="page1">
@@ -689,8 +734,8 @@
       var id7 = document.getElementById("page7");
       var id8 = document.getElementById("page8");
       var id9 = document.getElementById("page9");
-        id.style.visibility = "visible";
-        id.style.position = "absolute";
+        id.style.visibility = "hidden";
+        id.style.position = "fixed";
         id2.style.visibility = "hidden";
         id2.style.position = "fixed";
         id3.style.visibility = "hidden";
