@@ -508,7 +508,7 @@
       <h2 style="text-decoration: underline;">Générer une clé de cryptage</h2>
       <br>
       <h4>Entrer la longueur de la clé souhaitée (4 - 100)</h4>
-      <input type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
+      <input style="width:20%" type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
       <br><br>
       <button class="boutton-code" onclick="generateEncryptionKey()">Générer</button>
       <br>
@@ -544,11 +544,11 @@
       <h2 style="text-decoration: underline;">Encoder  un texte</h2>
       <br>
       <h4>Entrer la clé de cryptage</h4>
-      <input type="password" id="clee1" required minlength="4" maxlength="100" size="100">
-      <input type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
+      <input style="width:80%" type="password" id="clee1" required minlength="4" maxlength="100" size="100">
+      <input style="appearance: auto;" type="checkbox" onclick="togglePasswordVisibility()" id="toggle-clee1">
       <br>
       <h4>Texte à traiter</h4>
-      <input type="text" id="text1" size="50">
+      <input style="width:50%" type="text" id="text1" size="50">
       <br><br>
       <button class="boutton-code" onclick="encryptText()">Encoder</button>
       
@@ -560,11 +560,11 @@
       <h2 style="text-decoration: underline;">Décoder  un texte</h2>
       <br>
       <h4>Entrer la clé de cryptage</h4>
-      <input type="password" id="clee2" required minlength="4" maxlength="100" size="100">
-      <input type="checkbox" onclick="togglePasswordVisibility2()" id="toggle-clee2">
+      <input style="width:80%" type="password" id="clee2" required minlength="4" maxlength="100" size="100">
+      <input style="appearance: auto;" type="checkbox" onclick="togglePasswordVisibility2()" id="toggle-clee2">
       <br>
       <h4>Texte à traiter</h4>
-      <input type="text" id="text2" size="50">
+      <input style="width:50%" type="text" id="text2" size="50">
       <br><br>
       
       <button class="boutton-code" onclick="decryptText()">Décoder</button>
