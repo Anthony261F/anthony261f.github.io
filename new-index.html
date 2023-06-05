@@ -555,16 +555,39 @@
       <h4>Entrer la longueur de la clé souhaitée (4 - 100)</h4>
       <input style="width:20%" type="number" id="longueur-clee" required minlength="4" maxlength="100" size="10">
       <br><br>
+      <span id="secutype">Sécurité renforcé : Désactivé</span><input style="appearance: auto;" type="checkbox" onclick="cleesecurise()" id="secu">
+      <br><br>
       <button class="boutton-code" onclick="generateEncryptionKey()">Générer</button>
       <br>
       <h4>Clé :</h4>
       <span id="resultclee">...</span>  <button class="boutton-code" id="copie1" onclick="copyEncryptionKey()">Copier</button>
 
       <script>
+        var gencleesecurise = 0;
+        function cleesecurise() {
+          var checksecu = document.getElementById("secu");
+          var msgsecu = document.getElementById("secutype");
+          
+
+          if (checksecu.checked) {
+            msgsecu.textContent = "Sécurité renforcé : Activé";
+            gencleesecurise = 1;
+          } else {
+            msgsecu.textContent = "Sécurité renforcé : Désactivé";
+            gencleesecurise = 0;
+          }
+        }
           // Génère une clé de cryptage aléatoire
           function generateEncryptionKey() {
               var key = '';
-              var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+              if (gencleesecurise == 0) {
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+              } else {
+                if (gencleesecurise == 1) {
+            
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789²&é(-è_çà)=^$*€ù,;:!<<?./§%¨£µ+°#{[|`\^@]}';
+              }}
+              
               var length = document.getElementById("longueur-clee").value;
 
               for (var i = 0; i < length; i++) {
@@ -630,13 +653,13 @@
         }
 
         function togglePasswordVisibility2() {
-          var passwordInput = document.getElementById("clee2");
-          var toggleCheckbox = document.getElementById("toggle-clee2");
+          var passwordInput2 = document.getElementById("clee2");
+          var toggleCheckbox2 = document.getElementById("toggle-clee2");
 
-          if (toggleCheckbox.checked) {
-            passwordInput.type = "text";
+          if (toggleCheckbox2.checked) {
+            passwordInput2.type = "text";
           } else {
-            passwordInput.type = "password";
+            passwordInput2.type = "password";
           }
         }
         function copyEncryptionKey2() {
