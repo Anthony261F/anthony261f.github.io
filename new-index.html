@@ -640,7 +640,18 @@
       <h4>Résultat :</h4>
       <span id="code2">...</span>  <button class="boutton-code" id="copie3" onclick="copyEncryptionKey3()">Copier</button>
       <br><br>
+      <div onclick="closecopier()" style="position:fixed; z-index: 1111; background-color: gray; margin-left: 0px; margin-right: 0px; opacity: 0.5;" id="fondcopier"></div>
+      <div style="position:fixed; z-index: 1112; height:auto; width:100%;" id="ztextecopier">
+        <div style="text-align: center;">
+          <h1 id="textecopier">...</h1>
+        </div>
+      </div>
       <script>
+        var idtextecopier = document.getElementById("textecopier");
+        var idfondcopier = document.getElementById("fondcopier");
+        var idzonecopier = document.getElementById("ztextecopier");
+        idfondcopier.style.visibility = "hidden"
+        idzonecopier.style.visibility = "hidden"
         function togglePasswordVisibility() {
           var passwordInput = document.getElementById("clee1");
           var toggleCheckbox = document.getElementById("toggle-clee1");
@@ -670,7 +681,10 @@
               tempInput.select();
               document.execCommand("copy");
               document.body.removeChild(tempInput);
-              alert("Le texte encoder a été copiée dans le presse-papiers.");
+              idtextecopier.innerText = "Le texte encoder a été copiée dans le presse-papiers.";
+              idfondcopier.style.visibility = "visible"
+              idzonecopier.style.visibility = "visible"
+              
           }
           function copyEncryptionKey3() {
               var encryptionKey = document.getElementById("code2").innerText;
@@ -735,6 +749,8 @@
           document.getElementById("code2").innerText = decryptedText;
         }
       </script>
+      
+
   </div>
 </div>
               </div></div>
