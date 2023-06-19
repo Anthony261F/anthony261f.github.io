@@ -1,5 +1,6 @@
 const GAME_SIZE = 600;
-const SQUARE_SIZE = 20;
+const SQUARE_SIZE = 15;
+var score = 0
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 

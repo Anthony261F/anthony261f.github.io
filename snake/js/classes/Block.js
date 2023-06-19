@@ -29,7 +29,7 @@ class Block {
     }
 
     draw() {
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'green';
         ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
     }
 }

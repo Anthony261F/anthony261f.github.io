@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Snake</title>
 </head>
 <body>
-    <div>
-        salut, voici un snake
-    </div>
-    <canvas id="game" width="600" height="600"></canvas>
+    <div class="flex">
+        <div style="float:left;">
+        <h1>Snake :</h1>
+        <h3>score : <span id="score">...</span></h3>
+        </div><div style="float:right;">
+    <canvas id="game" width="600" height="600" style="border:solid;"></canvas>
+</div></div>
 </body>
-<script src="js/classes/Food.js"></script>
+<script>
+    class Food {
+    constructor() {
+        this.size = SQUARE_SIZE;
+        this.setRandomPosition();
+    }
+
+    setRandomPosition() {
+        const maxSize = ((GAME_SIZE / this.size) - 1);
+        this.x = Math.round(Math.random() * GAME_SIZE % maxSize);
+        this.y = Math.round(Math.random() * GAME_SIZE % maxSize);
+        var score = score + 1;
+        document.getElementById("score").innerHTML = score;
+    }
+
+    draw() {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
+    }
+}
+</script>
 <script src="js/classes/Block.js"></script>
 <script src="js/classes/Snake.js"></script>
 <script src="js/game.js"></script>

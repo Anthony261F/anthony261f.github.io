@@ -53,6 +53,7 @@ class Snake {
                 break;
         }
         return {x, y};
+        
     }
 
     eat() {
