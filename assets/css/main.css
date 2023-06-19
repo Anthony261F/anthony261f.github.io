@@ -2817,6 +2817,7 @@ input, select, textarea {
 			padding: 2.75em;
 			opacity: 0;
 			overflow-y: auto;
+			padding-bottom:0px;
 		}
 
 			#menu > .inner > ul {
