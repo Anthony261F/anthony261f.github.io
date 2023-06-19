@@ -476,67 +476,131 @@
       <div class="centre">
         <h1 id="nom-page">💻 Calculatrice</h1>
       </div>
-        <div class="flex">
-          <div class="c-display">
-            <p id="output">0</p>
-          </div>
+      <div class="flex">
+        <div class="c-display">
+          <p id="output">0</p>
+        </div>
         <div class="first-row">
-           <button class="button" id="r1-1" onclick="forclear()" style="width: 138px;">C</button>
-           <button class="button" id="r1-3" onclick="perc()">%</button>
-           <button class="button" id="r1-4" value="/" onclick="fordisplay('/')">/</button>
+          <button class="button" id="r1-3" onclick="forpower(1)" style="width: 138px;">x<sup>.</sup></button>
+          <button class="button" id="r1-3" onclick="forpower(2)">x<sup>2</sup></button>
+          <button class="button" id="r6-1" onclick="forpower(3)">x<sup>3</sup></button>
+          <button class="button" id="r6-1" onclick="forpower(4)">x<sup>4</sup></button>
+        </div>
+        <div class="sixth-row">
+          
+          <button class="button" id="r6-2" onclick="forsqrt()">&radic;</button>
+          <button class="button" id="r6-3" onclick="forparentheses('(')">(</button>
+          <button class="button" id="r6-4" onclick="forparentheses(')')">)</button>
+          <button class="button" id="r1-2" onclick="forbackspace()" style="width: 138px;">&larr;</button>
         </div>
         <div class="second-row">
-           <button class="button" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
-           <button class="button" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
-           <button class="button" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
-           <button class="button" id="r2-4" value="*" onclick="fordisplay('*')">X</button>
+          <button class="button" id="r3-5" onclick="cos()" style="text-overflow:initial; width:24%;">cos</button>
+          <button class="button" id="r3-5" onclick="sin()" style="text-overflow:initial; width:24%;">sin</button>
+          <button class="button" id="r4-5" onclick="tan()" style="text-overflow:initial; width:24%;">tan</button>
+          <button class="button" id="r6-2" onclick="log()" style="text-overflow:initial; width:24%;">log</button>
+        </div>
+        <div class="second-row">
+          <button class="button" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
+          <button class="button" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
+          <button class="button" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
+          <button class="button" id="r1-1" onclick="forclear()" style="width: 138px;">C</button>
         </div>
         <div class="third-row">
-           <button class="button" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
-           <button class="button" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
-           <button class="button" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
-           <button class="button" id="r3-4" value="-" onclick="fordisplay('-')">-</button>
+          <button class="button" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
+          <button class="button" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
+          <button class="button" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
+          <button class="button" id="r2-4" value="*" onclick="fordisplay('*')">X</button>
+          <button class="button" id="r1-4" value="/" onclick="fordisplay('/')">/</button>
         </div>
         <div class="fourth-row">
-           <button class="button" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
-           <button class="button" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
-           <button class="button" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
-           <button class="button" id="r4-4" value="+" onclick="fordisplay('+')">+</button>
+          <button class="button" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
+          <button class="button" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
+          <button class="button" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
+          <button class="button" id="r4-4" value="+" onclick="fordisplay('+')">+</button>
+          <button class="button" id="r3-4" value="-" onclick="fordisplay('-')">-</button>
         </div>
         <div class="fifth-row">
-          <button class="button" id="r5-1" value="0" onclick="fordisplay('0')"style="width: 138px;">0</button>
+          <button class="button" id="r5-1" value="0" onclick="fordisplay('0')" style="width: 138px;">0</button>
           <button class="button" id="r5-2" value="." onclick="fordisplay('.')">.</button>
-          <button class="button" id="r5-3" value="=" onclick="solve()">=</button>
+          <button class="button" id="r5-3" value="=" onclick="solve()" style="width: 138px;">=</button>
         </div>
-          
-          <script>
-            function forclear() {
-              document.getElementById("output").innerHTML = "0";
-            }
-            function removeZero() {
-            var value = document.getElementById("output").innerHTML;
-              if (value == "0") {
-                value = " "
-                document.getElementById("output").innerHTML = value;
-              }
-            }
-            function perc() {
-              var value = document.getElementById("output").innerHTML;
-              value = value / 100;
-              document.getElementById("output").innerHTML = value;
-            }
-            function fordisplay(value) {
-              removeZero()
-              document.getElementById("output").innerHTML += value;
-            }
-            function solve() {
-              removeZero()
-              var equation = document.getElementById("output").innerHTML;
-              var solved = eval(equation);
-              document.getElementById('output').innerHTML = solved;
-            }
-          </script>
-          </div>
+
+      </div>
+      
+      <script>
+        function forclear() {
+          document.getElementById("output").innerHTML = "0";
+        }
+      
+        function removeZero() {
+          var value = document.getElementById("output").innerHTML;
+          if (value == "0") {
+            value = "";
+            document.getElementById("output").innerHTML = value;
+          }
+        }
+      
+        function forbackspace() {
+          var value = document.getElementById("output").innerHTML;
+          value = value.slice(0, -1);
+          document.getElementById("output").innerHTML = value;
+        }
+      
+        function forpower(power) {
+          removeZero();
+          var value = document.getElementById("output").innerHTML;
+          var solved = 1;
+          for (var boucle = 0; boucle < power; boucle++) {
+           solved = eval(solved * value) 
+          }
+          document.getElementById("output").innerHTML = solved;
+        }
+      
+        function forsqrt() {
+          var value = document.getElementById("output").innerHTML;
+          var result = Math.sqrt(parseFloat(value));
+          document.getElementById("output").innerHTML = result;
+        }
+      
+        function forparentheses(parentheses) {
+          removeZero();
+          document.getElementById("output").innerHTML += parentheses;
+        }
+      
+        function fordisplay(value) {
+          removeZero();
+          document.getElementById("output").innerHTML += value;
+        }
+      
+        function solve() {
+          removeZero();
+          var equation = document.getElementById("output").innerHTML;
+          var solved = eval(equation);
+          document.getElementById("output").innerHTML = solved;
+        }
+        function cos() {
+  var value = document.getElementById("output").innerHTML;
+  var result = Math.cos(parseFloat(value));
+  document.getElementById("output").innerHTML = result;
+}
+function sin() {
+  var value = document.getElementById("output").innerHTML;
+  var result = Math.sin(parseFloat(value));
+  document.getElementById("output").innerHTML = result;
+}
+function tan() {
+  var value = document.getElementById("output").innerHTML;
+  var result = Math.tan(parseFloat(value));
+  document.getElementById("output").innerHTML = result;
+}
+function log() {
+  var value = document.getElementById("output").innerHTML;
+  var result = Math.log(parseFloat(value));
+  document.getElementById("output").innerHTML = result;
+}
+
+      </script>
+      
     
           <HR>
             <div class="centre">
