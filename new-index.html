@@ -481,7 +481,7 @@
           <p id="output">0</p>
         </div>
         <div class="first-row">
-          <button class="button" id="r1-3" onclick="forpower(1)" style="width: 138px;">x<sup>.</sup></button>
+          <button class="button" id="r1-3" onclick="forpower2(1)" style="width: 138px;">x<sup>.</sup></button>
           <button class="button" id="r1-3" onclick="forpower(2)">x<sup>2</sup></button>
           <button class="button" id="r6-1" onclick="forpower(3)">x<sup>3</sup></button>
           <button class="button" id="r6-1" onclick="forpower(4)">x<sup>4</sup></button>
@@ -555,7 +555,17 @@
           }
           document.getElementById("output").innerHTML = solved;
         }
-      
+        function forpower2(power2) {
+          var exposantt = prompt('quel est l exposant ?');
+          power2 = exposantt
+          removeZero();
+          var value = document.getElementById("output").innerHTML;
+          var solved = 1;
+          for (var boucle = 0; boucle < power2; boucle++) {
+           solved = eval(solved * value) 
+          }
+          document.getElementById("output").innerHTML = solved;
+        }
         function forsqrt() {
           var value = document.getElementById("output").innerHTML;
           var result = Math.sqrt(parseFloat(value));
