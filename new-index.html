@@ -477,7 +477,8 @@
         <h1 id="nom-page">💻 Calculatrice</h1>
       </div>
       <div class="flex">
-        <div class="c-display">
+        <div style="padding: 50px; border:solid; background-color: lightgreen; border-radius: 20px;">
+        <div class="c-display" style="background-color: #ffffff;">
           <p id="output">0</p>
         </div>
         <div class="first-row">
@@ -491,7 +492,7 @@
           <button class="button" id="r6-2" onclick="forsqrt()">&radic;</button>
           <button class="button" id="r6-3" onclick="forparentheses('(')">(</button>
           <button class="button" id="r6-4" onclick="forparentheses(')')">)</button>
-          <button class="button" id="r1-2" onclick="forbackspace()" style="width: 138px;">&larr;</button>
+          <button class="button" id="r1-2" onclick="forbackspace()" style="width: 138px; background-color: yellow;">&larr;</button>
         </div>
         <div class="second-row">
           <button class="button" id="r3-5" onclick="cos()" style="text-overflow:initial; width:24%;">cos</button>
@@ -503,7 +504,7 @@
           <button class="button" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
           <button class="button" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
           <button class="button" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
-          <button class="button" id="r1-1" onclick="forclear()" style="width: 138px;">C</button>
+          <button class="button" id="r1-1" onclick="forclear()" style="width: 138px; background-color: yellow;">C</button>
         </div>
         <div class="third-row">
           <button class="button" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
@@ -522,9 +523,9 @@
         <div class="fifth-row">
           <button class="button" id="r5-1" value="0" onclick="fordisplay('0')" style="width: 138px;">0</button>
           <button class="button" id="r5-2" value="." onclick="fordisplay('.')">.</button>
-          <button class="button" id="r5-3" value="=" onclick="solve()" style="width: 138px;">=</button>
+          <button class="button" id="r5-3" value="=" onclick="solve()" style="width: 138px; background-color: lightskyblue;">=</button>
         </div>
-
+        </div>
       </div>
       
       <script>
