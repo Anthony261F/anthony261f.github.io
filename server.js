@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 9999 });
+const wss = new WebSocket.Server({ port: 9261 });
 
 const clients = [];
 
@@ -21,5 +21,5 @@ function broadcast(message) {
     });
 }
 
-console.log('Server started on port 9999');
+console.log('Server started on port 9261');
 
