@@ -21,14 +21,20 @@ document.getElementById('formulaire').addEventListener('submit', function(event)
 
 var nom_b = document.getElementById("fond");
 var nom_t = document.getElementById("fond2");
+var nomm = document.getElementById('nom').value
 nom_b.style.visibility = "visible";
 nom_t.style.visibility = "visible";
 function envoie_nom() {
-  nom_b.style.visibility = "hidden";
-  nom_t.style.visibility = "hidden";
-  document.getElementById('renom').innerText = document.getElementById('nom').value;
-  nomc = document.getElementById('nom').value; // Affecter la valeur à la variable nomc
-  socket.send("[+] " + nomc + " a rejoint le tchat");
+    if (nomm == "") {
+        alert("champ obligatoire");
+    } else {
+        nom_b.style.visibility = "hidden";
+        nom_t.style.visibility = "hidden";
+        document.getElementById('renom').innerText = document.getElementById('nom').value;
+        nomc = document.getElementById('nom').value; // Affecter la valeur à la variable nomc
+        socket.send("[+] " + nomc + " a rejoint le tchat");
+    }
+
 }
 
 let lastActivityTime = Date.now(); // Enregistrez cette valeur lorsque l'utilisateur se connecte
@@ -43,7 +49,7 @@ setInterval(function() {
 
   if (currentTime - lastActivityTime > inactivityThreshold) {
     // Utilisateur considéré comme déconnecté
-    if (nomc = "") {
+    if (nomc == "") {
 
     } else {
         socket.send("[-] " + nomc + " a quitté le tchat");
