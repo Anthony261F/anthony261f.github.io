@@ -25,6 +25,7 @@ var nomm = document.getElementById('nom').value
 nom_b.style.visibility = "visible";
 nom_t.style.visibility = "visible";
 function envoie_nom() {
+    nomm = document.getElementById('nom').value
     if (nomm == "") {
         alert("champ obligatoire");
     } else {
@@ -50,10 +51,15 @@ setInterval(function() {
   if (currentTime - lastActivityTime > inactivityThreshold) {
     // Utilisateur considéré comme déconnecté
     if (nomc == "") {
-
+        alert("cc");
     } else {
         socket.send("[-] " + nomc + " a quitté le tchat");
         location.reload();        
     }
   }
 }, 10000); // Vérification toutes les 10 secondes
+
+function deco() {
+    socket.send("[-] " + nomc + " a quitté le tchat");
+    location.reload();   
+}
