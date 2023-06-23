@@ -33,7 +33,7 @@ function envoie_nom() {
         nom_t.style.visibility = "hidden";
         document.getElementById('renom').innerText = document.getElementById('nom').value;
         nomc = document.getElementById('nom').value; // Affecter la valeur à la variable nomc
-        socket.send("[+] " + nomc + " a rejoint le tchat");
+        socket.send("[+] " + nomc + " à rejoint le tchat");
     }
 
 }
@@ -53,13 +53,13 @@ setInterval(function() {
     if (nomc == "") {
         alert("cc");
     } else {
-        socket.send("[-] " + nomc + " a quitté le tchat");
+        socket.send("[-] " + nomc + " à était déconecté du tchat");
         location.reload();        
     }
   }
 }, 10000); // Vérification toutes les 10 secondes
 
 function deco() {
-    socket.send("[-] " + nomc + " a quitté le tchat");
+    socket.send("[-] " + nomc + " à quitté le tchat");
     location.reload();   
 }
