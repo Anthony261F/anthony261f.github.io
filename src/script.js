@@ -45,7 +45,7 @@ document.documentElement.addEventListener('mousemove', function() {
 
 setInterval(function() {
   const currentTime = Date.now();
-  const inactivityThreshold = 30000; // Durée d'inactivité en millisecondes (2 minutes)
+  const inactivityThreshold = 300000; // Durée d'inactivité en millisecondes (5 minutes)
 
   if (currentTime - lastActivityTime > inactivityThreshold) {
     // Utilisateur considéré comme déconnecté
