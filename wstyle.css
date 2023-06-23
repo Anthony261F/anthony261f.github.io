@@ -4,6 +4,12 @@
     font-family: sans-serif;
 }
 
+.chat {
+    width: 500px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
 #messages {
     border: 1px solid #ccc;
     height: 300px;

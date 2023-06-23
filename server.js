@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 2610 });
+const wss = new WebSocket.Server({ port: 2023 });
 
 const clients = [];
 
@@ -11,8 +11,6 @@ wss.on('connection', function connection(ws) {
         console.log('received: %s', message);
         broadcast(String(message));
     });
-
-    
 });
 
 function broadcast(message) {
@@ -21,5 +19,5 @@ function broadcast(message) {
     });
 }
 
-console.log('Server started on port 2610');
+console.log('Server started on port 2023');
 

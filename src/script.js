@@ -1,4 +1,5 @@
-const socket = new WebSocket('ws://localhost:2610');
+const socket = new WebSocket('ws://localhost:2023');
+let lastActivityTime = Date.now(); // Enregistrez cette valeur lorsque l'utilisateur se connecte
 
 socket.onopen = function() {
     console.log('Connecté au serveur WebSocket');
@@ -29,3 +30,18 @@ function envoie_nom() {
     const nomc = document.getElementById('nom').value;
     socket.send("[+] " + nomc + " à rejoint le tchat");
 }
+
+document.addEventListener('mousemove', function() {
+    lastActivityTime = Date.now();
+  });
+
+  setInterval(function() {
+    const currentTime = Date.now();
+    const inactivityThreshold = 120000; // Durée d'inactivité en millisecondes (2 minutes)
+  
+    if (currentTime - lastActivityTime > inactivityThreshold) {
+      // Utilisateur considéré comme déconnecté
+      socket.send("[-] " + nomc + " à quitté le tchat");
+    }
+  }, 60000); // Vérification toutes les minutes
+  
