@@ -51,7 +51,7 @@ setInterval(function() {
   if (currentTime - lastActivityTime > inactivityThreshold) {
     // Utilisateur considéré comme déconnecté
     if (nomc == "") {
-        alert("cc");
+        
     } else {
         socket.send("[-] " + nomc + " à était déconecté du tchat");
         location.reload();        
