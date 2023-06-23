@@ -8,7 +8,15 @@
 
 </head>
 <body>
+<div id="fond" style="margin:0px; padding:0px; height:800px; width:2000px; background-color: aqua; position:fixed; z-index: 1000;"></div>
+<div id="fond2" style="margin-left: auto; margin-right: auto; position:fixed; text-align: center; z-index: 2000;">
+    <h3>entrez votre nom</h3>
+    <br>
+    <input type="text" id="nom" placeholder="Entrez votre nom ici"><button onclick="envoie_nom()">Ok</button>
+</div>
+
 <div id="chat">
+    <h3>Nom : <span id="renom">...</span></h3>
     <div id="messages">
         <!-- Les messages seront affichés ici -->
     </div>
