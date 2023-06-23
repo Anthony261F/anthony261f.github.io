@@ -36,3 +36,23 @@
     background-color: #4caf50;
     color: #fff;
 }
+
+.formulaire {
+    padding: 10px;
+    text-align: center;
+}
+
+.formulaire input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    width: 80%;
+}
+
+.formulaire button[type="submit"] {
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    background-color: #4caf50;
+    color: #fff;
+}
