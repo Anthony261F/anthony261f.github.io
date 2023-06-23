@@ -12,7 +12,7 @@ wss.on('connection', function connection(ws) {
         broadcast(String(message));
     });
 
-    ws.send('Bienvenue sur le chat Gekkode!');
+    ws.send('Vous avez rejoint le tchat');
 });
 
 function broadcast(message) {
