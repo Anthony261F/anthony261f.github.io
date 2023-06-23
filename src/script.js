@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://localhost:9261');
+const socket = new WebSocket('ws://localhost:2610');
 
 socket.onopen = function() {
     console.log('Connecté au serveur WebSocket');
@@ -13,7 +13,7 @@ socket.onmessage = function(event) {
 document.getElementById('formulaire').addEventListener('submit', function(event) {
     event.preventDefault();
     const message = document.getElementById('message').value;
-    const lenom = document.getElementById('nom').value + " : "
+    const lenom = document.getElementById('nom').value + " : ";
     socket.send(lenom + message);
     document.getElementById('message').value = '';
 });
@@ -25,5 +25,7 @@ nom_t.style.visibility = "visible";
 function envoie_nom() {
     nom_b.style.visibility = "hidden";
     nom_t.style.visibility = "hidden";
-    document.getElementById('renom').innerText = document.getElementById('nom').value
+    document.getElementById('renom').innerText = document.getElementById('nom').value;
+    const nomc = document.getElementById('nom').value;
+    socket.send("[+] " + nomc + " à rejoint le tchat");
 }

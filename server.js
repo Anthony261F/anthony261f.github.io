@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 9261 });
+const wss = new WebSocket.Server({ port: 2610 });
 
 const clients = [];
 
@@ -12,7 +12,7 @@ wss.on('connection', function connection(ws) {
         broadcast(String(message));
     });
 
-    ws.send('Vous avez rejoint le tchat');
+    
 });
 
 function broadcast(message) {
@@ -21,5 +21,5 @@ function broadcast(message) {
     });
 }
 
-console.log('Server started on port 9261');
+console.log('Server started on port 2610');
 
