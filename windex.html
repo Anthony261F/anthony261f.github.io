@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="wstyle.css">
 
 </head>
-<body style="display:flex; margin:0px">
+<body style="display:flex; margin:0px; background-color: yellow;">
 <div id="fond" style="margin:0px; padding:0px; height:800px; width:2000px; background-color: aqua; position:fixed; z-index: 1000;"></div>
 <div id="fond2" style="position:fixed; text-align: center; z-index: 2000;" class="chat">
     <h3>Entrez votre nom</h3>
@@ -16,10 +16,10 @@
         <button onclick="envoie_nom()">Ok</button>
     </div>
 </div>
-
-<div id="chat">
+<button onclick="openchat()">💬</button>
+<div id="chat" style="background-color: coral; padding: 25px; border-radius: 20px; margin-top: 20px; text-align: center; border:solid;">
     <h3>Nom : <span id="renom">...</span></h3><button style="background-color: red; padding: 10px; border-radius: 15px;" onclick="deco()">Déconexion</button><br><br>
-    <div id="messages">
+    <div id="messages" style="text-align: left;">
         <!-- Les messages seront affichés ici -->
     </div>
     <form id="formulaire">
@@ -29,4 +29,20 @@
 </div>
 </body>
 <script src="./src/script.js"></script>
+<script>
+    var etatchat = 1;
+    var chatvisi = document.getElementById("chat");
+    chat.style.visibility = "hidden";
+    function openchat() {
+        if (etatchatvisi = 1) {
+            etatchatvisi = 2;
+            chat.style.visibility = "visible";
+        } else {
+            if (etatchatvisi = 2) {
+            etatchatvisi = 1;
+            chat.style.visibility = "hidden";
+            }
+        }
+    }
+</script>
 </html>
