@@ -9,6 +9,8 @@ socket.onmessage = function(event) {
   const message = document.createElement('div');
   message.textContent = event.data;
   document.getElementById('messages').appendChild(message);
+  let audio = new Audio("message-d.mp3");
+  audio.play();
 };
 
 document.getElementById('formulaire').addEventListener('submit', function(event) {

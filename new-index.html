@@ -64,7 +64,12 @@
         text-transform: none;
       }
     </style>
-     
+    <script>
+      function openchatw() {
+        var link = "https://anthony261f.github.io/windex.html";
+        open(link,"_blank")
+      }
+    </script> 
 </head> 
 <body style="margin:0px; display:contents; background-color: aqua;" id="haut">
   
@@ -142,32 +147,7 @@
             <!-- Main -->
               <div id="main">
                 <div> <!-- mettre ~ class="inner" ~ pour écart sur le coté -->
-
-
-                  <div id="fond" style="visibility: hidden; margin:0px; padding:0px; height:800px; width:2000px; background-color: aqua; position:fixed; z-index: 10009;"></div>
-                  <div id="fond2" style="visibility: hidden; position:fixed; text-align: center; z-index: 20000;" class="chat">
-                      <h3>Entrez votre nom</h3>
-                      <div class="formulaire" >
-                          <input value="" type="text" id="nom" placeholder="Entrez votre nom ici">
-                          <button onclick="envoie_nom()">Ok</button>
-                      </div>
-                  </div> 
-
-                  <div id="fchat" style="visibility: hidden; margin:0px; padding:0px; height:800px; width:2000px; background-color: aqua; position:fixed; z-index: 10009;"></div>
-                  <div id="fchat2" style="visibility: hidden; position:fixed; text-align: center; z-index: 20000;" class="chat">
-                    <div id="chat" style="background-color: coral; padding: 25px; border-radius: 20px; margin-top: 20px; text-align: center; border:solid;">
-                      <h3>Nom : <span id="renom">...</span></h3><button style="background-color: red; padding: 10px; border-radius: 15px;" onclick="deco()">Déconexion</button><br><br>
-                      <div id="messages" style="text-align: left;">
-                          <!-- Les messages seront affichés ici -->
-                      </div>
-                      <form id="formulaire">
-                          <input type="text" id="message" placeholder="Entrez votre message ici">
-                          <button type="submit">Envoyer</button>
-                      </form>
-                    </div>
-                  </div> 
-                  
-
+*
 
   <!-- page 1-->
     <div style="position:absolute; z-index: 1000; height:auto; width:100%;" id="page1">
@@ -1115,7 +1095,7 @@ function log() {
        }
          </script>
     <script src="index.js"></script>
-    <script src="script.js"></script>
+ 
     <script>
               
         var player = document.querySelector('#audioPlayer');
