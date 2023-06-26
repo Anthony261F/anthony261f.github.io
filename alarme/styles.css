@@ -54,3 +54,15 @@ body {
     margin: 50px;
     
   }
+
+  .para {
+    text-align: center;
+    float: left;
+    margin-left: 75px;
+    margin-top: 50px;
+    color:black;
+    width: 200px;
+    background-color: #a4e425;
+    padding: 10px;
+    border-radius: 30px;
+  }
