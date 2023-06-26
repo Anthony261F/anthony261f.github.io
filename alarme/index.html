@@ -36,7 +36,29 @@ function ouvrir24H ()
   <body>
 
     <a href="https://www.sunaris.fr/" target="_blank"><h1 id="blanc" style="text-align: center;">Sunaris</h1></a>
+    <div class="tour"><div class="droite">
+      <h3>Paramètre</h3>
+      <span>Ouverture automatique des sites à la fin du temps : </span><br><span id="autotype">Désactivé</span><input style="appearance: auto;" type="checkbox" onclick="ouvertureauto()" id="couvertureauto">
+    </div></div>
+    <script>
+        var vouvertureauto = 0;
+        function ouvertureauto() {
+          var checkauto = document.getElementById("couvertureauto");
+          var msgauto = document.getElementById("autotype");
+          
 
+          if (checkauto.checked) {
+            msgauto.textContent = "Activé";
+            vouvertureauto = 1;
+          } else {
+            msgauto.textContent = "Désactivé";
+            vouvertureauto = 0;
+          }
+        }
+    </script>
+
+    <br style="clear:both; margin-bottom: 50px;">
+<HR>
     <div class="tour">
     <div class="droite"> <!-- Vote 2 heures-->
       <span id="blanc">serveur</span><span id="rouge">prive.net</span>
@@ -75,6 +97,6 @@ function ouvrir24H ()
     <span id="blanc">Découvrez aussi le /pw Mybou</span>
   </div>
 
-    <script src="timer.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

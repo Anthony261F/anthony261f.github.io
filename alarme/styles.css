@@ -21,21 +21,25 @@ body {
   .droite {
     text-align: center;
     float: left;
-    margin: 10%;
+    margin-left: 75px;
+    margin-top: 50px;
     color:white;
-    width: 20%;
+    width: 200px;
     background-color: #25e4db;
     padding: 10px;
+    border-radius: 30px;
   }
 
   .gauche {
     text-align: center;
     float: right;
-    margin: 10%;
+    margin-left: 75px;
+    margin-top: 50px;
     color:white;
-    width: 20%;
+    width: 200px;
     background-color: #25e4db;
     padding: 10px;
+    border-radius: 30px;
   }
 
   #blanc {
@@ -47,6 +51,6 @@ body {
   }
 
   .tour {
-    margin: 10%;
+    margin: 50px;
     
   }
