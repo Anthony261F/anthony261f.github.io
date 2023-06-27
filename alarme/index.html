@@ -39,7 +39,12 @@ function ouvrir24H ()
     <div class="tour"><div class="para">
       <h3>Paramètre</h3>
       <span>Ouverture automatique des sites à la fin du temps : </span><br><span id="autotype">Désactivé</span><input style="appearance: auto;" type="checkbox" onclick="ouvertureauto()" id="couvertureauto">
-    </div></div>
+    </div>
+    <div class="para">
+      <h3>Test Son</h3>
+      <span>Cliquez sur le bouton pour tester le son de l'alarme</span><br><button onclick="testson()">Test</button>
+    </div>
+  </div>
     <script>
         var vouvertureauto = 0;
         function ouvertureauto() {
@@ -54,6 +59,9 @@ function ouvrir24H ()
             msgauto.textContent = "Désactivé";
             vouvertureauto = 0;
           }
+        }
+        function testson() {
+          audio.play();
         }
     </script>
 
