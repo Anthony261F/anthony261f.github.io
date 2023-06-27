@@ -63,7 +63,7 @@ function start3() {
         const minutes3 = Math.floor((temps3 % 3600) / 60); // Conversion en minutes
         const secondesRestantes3 = temps3 % 60; // Secondes restantes
       
-        timerElement2.innerText = `${heures3}:${minutes3}:${secondesRestantes3}`;
+        timerElement3.innerText = `${heures3}:${minutes3}:${secondesRestantes3}`;
       }, 1000) //1 secondes
 }
 
