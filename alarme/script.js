@@ -26,8 +26,7 @@ function start2() {
     repete2 = setInterval(() => {
         dateactuelle = Date.now();
         temps2 = Math.round((dateactuelle - datedepart2) / 1000);
-        temps2 = 10 - temps2;
-        timerElement2.innerText = temps2;
+        temps2 = 7200 - temps2;
         if (temps2 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
@@ -37,6 +36,11 @@ function start2() {
             alert("timer fini");
             clearInterval(repete2); //stop la bpucle
         }
+        const heures2 = Math.floor(temps2 / 3600); // Conversion en heures
+        const minutes2 = Math.floor((temps2 % 3600) / 60); // Conversion en minutes
+        const secondesRestantes2 = temps2 % 60; // Secondes restantes
+      
+        timerElement2.innerText = `${heures2}:${minutes2}:${secondesRestantes2}`;
       }, 1000) //1 secondes
 }
 
@@ -46,7 +50,6 @@ function start3() {
         dateactuelle = Date.now();
         temps3 = Math.round((dateactuelle - datedepart3) / 1000);
         temps3 = 10800 - temps3;
-        timerElement3.innerText = temps3;
         if (temps3 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
@@ -56,6 +59,11 @@ function start3() {
             alert("timer fini");
             clearInterval(repete3); //stop la bpucle
         }
+        const heures3 = Math.floor(temps3 / 3600); // Conversion en heures
+        const minutes3 = Math.floor((temps3 % 3600) / 60); // Conversion en minutes
+        const secondesRestantes3 = temps3 % 60; // Secondes restantes
+      
+        timerElement2.innerText = `${heures3}:${minutes3}:${secondesRestantes3}`;
       }, 1000) //1 secondes
 }
 
@@ -65,7 +73,6 @@ function start3e() {
         dateactuelle = Date.now();
         temps3e = Math.round((dateactuelle - datedepart3e) / 1000);
         temps3e = 10800 - temps3e;
-        timerElement3e.innerText = temps3e;
         if (temps3e < 1) {
             audio.play();
             if (vouvertureauto == 1) {
@@ -75,6 +82,11 @@ function start3e() {
             alert("timer fini");
             clearInterval(repete3e); //stop la bpucle
         }
+        const heures3e = Math.floor(temps3e / 3600); // Conversion en heures
+        const minutes3e = Math.floor((temps3e % 3600) / 60); // Conversion en minutes
+        const secondesRestantes3e = temps3e % 60; // Secondes restantes
+      
+        timerElement3e.innerText = `${heures3e}:${minutes3e}:${secondesRestantes3e}`;
       }, 1000) //1 secondes
 }
 
@@ -84,7 +96,6 @@ function start24() {
         dateactuelle = Date.now();
         temps24 = Math.round((dateactuelle - datedepart24) / 1000);
         temps24 = 86400 - temps24;
-        timerElement24.innerText = temps24;
         if (temps24 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
@@ -94,5 +105,10 @@ function start24() {
             alert("timer fini");
             clearInterval(repete24); //stop la bpucle
         }
+        const heures24 = Math.floor(temps24 / 3600); // Conversion en heures
+        const minutes24 = Math.floor((temps24 % 3600) / 60); // Conversion en minutes
+        const secondesRestantes24 = temps24 % 60; // Secondes restantes
+      
+        timerElement24.innerText = `${heures24}:${minutes24}:${secondesRestantes24}`;
       }, 1000) //1 secondes
 }
