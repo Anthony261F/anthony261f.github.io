@@ -30,7 +30,7 @@ function start2() {
         if (temps2 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
-                link = "https://serveur-prive.net/minecraft/sunaris-semirp-claims-economie-unique-entreprises-jobs-alliages-10379";
+                link = "https://serveur-prive.net/minecraft/sunaris-semirp-claims-economie-unique-entreprises-jobs-alliages-10379/vote";
                 open(link,"_blank")
             }
             alert("timer fini");
