@@ -21,6 +21,13 @@ const timerElement24 = document.getElementById("timer24");
 var dateactuelle = "";
 let audio = new Audio("alarme.mp3");
 
+function startTout() {
+    start2();
+    start3();
+    start3e();
+    start24();
+}
+
 function start2() {
     datedepart2 = Date.now();
     repete2 = setInterval(() => {
