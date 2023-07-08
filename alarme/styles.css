@@ -66,3 +66,15 @@ body {
     padding: 10px;
     border-radius: 30px;
   }
+
+  .tout {
+    text-align: center;
+    float: left;
+    margin-left: 75px;
+    margin-top: 50px;
+    color:black;
+    width: 200px;
+    background-color: #ffb700;
+    padding: 10px;
+    border-radius: 30px;
+  }

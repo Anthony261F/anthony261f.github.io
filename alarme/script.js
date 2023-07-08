@@ -2,6 +2,7 @@ var datedepart2 = "";
 var temps2 = "";
 var repete2 ="";
 const timerElement2 = document.getElementById("timer");
+var go2 = "0";
 
 var datedepart3 = "";
 var temps3 = "";
@@ -28,12 +29,20 @@ function startTout() {
     start24();
 }
 
+function stop2() {
+    go2 = "0";
+}
+
 function start2() {
     datedepart2 = Date.now();
+    go2 = "1";
     repete2 = setInterval(() => {
         dateactuelle = Date.now();
         temps2 = Math.round((dateactuelle - datedepart2) / 1000);
         temps2 = 7200 - temps2;
+        if (go2 == "0") {
+            
+        } 
         if (temps2 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
