@@ -42,19 +42,19 @@ function ouvrirTout() {
 
     <a href="https://www.sunaris.fr/" target="_blank"><h1 id="blanc" style="text-align: center;">Sunaris</h1></a>
     <div class="tour"><div class="para">
-      <h3>Paramètre</h3>
-      <span>Ouverture automatique des sites à la fin du temps : </span><br><span id="autotype">Désactivé</span><input style="appearance: auto;" type="checkbox" onclick="ouvertureauto()" id="couvertureauto">
+      <h3 style="font-weight:bold">Paramètre</h3>
+      <span>Ouverture automatique des sites à la fin du temps : </span><br><span id="autotype" style="font-weight:bold">Désactivé</span><input style="appearance: auto;" type="checkbox" onclick="ouvertureauto()" id="couvertureauto">
     </div>
     <div class="para">
-      <h3>Test Son</h3>
+      <h3 style="font-weight:bold">Test Son</h3>
       <span>Cliquez sur le bouton pour tester le son de l'alarme</span><br><button onclick="testson()">Test</button>
     </div>
     <div class="para">
-      <h3>Information</h3>
+      <h3 style="font-weight:bold">Information</h3>
       <span>Veuliez ne pas ouvrir d'autres onglet sur votre navigateur, la page pourrait ce re-charger</span><br><span>Il se peut que le décompte est 5 minutes de retard du au lag avec minecraft</span>
     </div>
     <div class="para">
-      <h3>Information</h3>
+      <h3 style="font-weight:bold">Information</h3>
       <span>Si le navigateur de cette page est réduit, l'alarme ne sonnerat que quand le navigateur ne serat plus réduit</span>
     </div>
   </div>
@@ -82,15 +82,15 @@ function ouvrirTout() {
     <div style="margin-bottom: 50px;"></div>
 <HR>
   <div class="tour"><div class="tout">
-    <h3>Tout ouvrir</h3>
+    <h3 style="font-weight:bold">Tout ouvrir</h3>
     <span>Ouvrir tout les sites de votes : </span><br><button onclick="ouvrirTout()">Open</button>
   </div>
   <div class="tout">
-    <h3>Tout démarer</h3>
+    <h3 style="font-weight:bold">Tout démarer</h3>
     <span>Démarer tout les minuteurs : </span><br><button onclick="startTout()">Start</button>
   </div>
   <div class="tout">
-    <h3>Tout arrêter</h3>
+    <h3 style="font-weight:bold">Tout arrêter</h3>
     <span>Arrêter tout les minuteurs : </span><br><button onclick="stopTout()">Stop</button>
   </div>
   </div>
@@ -99,7 +99,7 @@ function ouvrirTout() {
 <HR>
     <div class="tour">
     <div class="droite"> <!-- Vote 2 heures-->
-      <span id="blanc">serveur</span><span id="rouge">prive.net</span>
+      <span id="blanc" style="font-weight:bold">serveur</span><span id="rouge" style="font-weight:bold">prive.net</span>
       <div id="timer" class="time">2:00:00</div>
       <button onclick="parent.ouvrir2H()">Open</button>
       <button onclick="start2()">Start</button>
@@ -107,7 +107,7 @@ function ouvrirTout() {
     </div>
 
     <div class="gauche"> <!-- Vote 3 heures-->
-      <span>Serveur Minecraft</span>
+      <span style="font-weight:bold">Serveur Minecraft</span>
       <div id="timer3" class="time">3:00:00</div>
       <button onclick="parent.ouvrir3H()">Open</button>
       <button onclick="start3()">Start</button>
@@ -117,7 +117,7 @@ function ouvrirTout() {
     <br style="clear:both;">
 
     <div class="droite"> <!-- Vote 3e heures-->
-      <span>Liste Serveurs Minecraft</span>
+      <span style="font-weight:bold">Liste Serveurs Minecraft</span>
       <div id="timer3e" class="time">3:00:00</div>
       <button onclick="parent.ouvrir3He()">Open</button>
       <button onclick="start3e()">Start</button>
@@ -125,7 +125,7 @@ function ouvrirTout() {
     </div>
 
     <div class="gauche"> <!-- Vote 24 heures-->
-      <span>Serveurs Minecraft.org</span>
+      <span style="font-weight:bold">Serveurs Minecraft.org</span>
       <div id="timer24" class="time">24:00:00</div>
       <button onclick="parent.ouvrir24H()">Open</button>
       <button onclick="start24()">Start</button>
