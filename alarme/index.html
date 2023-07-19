@@ -17,7 +17,7 @@ function ouvrir3H () {
          }
 
 function ouvrir3He () {
-         var link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-19-2/";
+         var link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20-x/";
          open(link,"_blank")
          }
 
@@ -28,7 +28,7 @@ function ouvrir24H () {
 function ouvrirTout() {
         var link = "https://www.serveursminecraft.org/serveur/5993/";
         open(link,"_blank")
-        var link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-19-2/";
+        var link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20-x/";
          open(link,"_blank")
          var link = "https://serveur-minecraft.com/2833";
          open(link,"_blank")
@@ -100,7 +100,7 @@ function ouvrirTout() {
     <div class="tour">
     <div class="droite"> <!-- Vote 2 heures-->
       <span id="blanc">serveur</span><span id="rouge">prive.net</span>
-      <div id="timer">2:00:00</div>
+      <div id="timer" class="time">2:00:00</div>
       <button onclick="parent.ouvrir2H()">Open</button>
       <button onclick="start2()">Start</button>
       <button onclick="stop2()">Stop</button>
@@ -108,7 +108,7 @@ function ouvrirTout() {
 
     <div class="gauche"> <!-- Vote 3 heures-->
       <span>Serveur Minecraft</span>
-      <div id="timer3">3:00:00</div>
+      <div id="timer3" class="time">3:00:00</div>
       <button onclick="parent.ouvrir3H()">Open</button>
       <button onclick="start3()">Start</button>
       <button onclick="stop3()">Stop</button>
@@ -118,7 +118,7 @@ function ouvrirTout() {
 
     <div class="droite"> <!-- Vote 3e heures-->
       <span>Liste Serveurs Minecraft</span>
-      <div id="timer3e">3:00:00</div>
+      <div id="timer3e" class="time">3:00:00</div>
       <button onclick="parent.ouvrir3He()">Open</button>
       <button onclick="start3e()">Start</button>
       <button onclick="stop3e()">Stop</button>
@@ -126,7 +126,7 @@ function ouvrirTout() {
 
     <div class="gauche"> <!-- Vote 24 heures-->
       <span>Serveurs Minecraft.org</span>
-      <div id="timer24">24:00:00</div>
+      <div id="timer24" class="time">24:00:00</div>
       <button onclick="parent.ouvrir24H()">Open</button>
       <button onclick="start24()">Start</button>
       <button onclick="stop24()">Stop</button>

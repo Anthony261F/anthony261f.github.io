@@ -92,7 +92,7 @@ function start3e() {
         if (temps3e < 1) {
             audio.play();
             if (vouvertureauto == 1) {
-                link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-19-2/";
+                link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20-x/";
                 open(link,"_blank")
             }
             alert("timer fini");
