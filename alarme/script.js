@@ -92,7 +92,11 @@ function start3e() {
         if (temps3e < 1) {
             audio.play();
             if (vouvertureauto == 1) {
+<<<<<<< HEAD
                 link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20-x/";
+=======
+                link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20/";
+>>>>>>> bc540092af5ebd02a25434819ce9849391fdc2ae
                 open(link,"_blank")
             }
             alert("timer fini");
