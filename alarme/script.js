@@ -33,6 +33,13 @@ function startTout() {
     start24();
 }
 
+function stopTout() {
+    stop2();
+    stop3();
+    stop3e();
+    stop24();
+}
+
 function start2() {
     if (isDecompteEnCours2) {
         return; // Le décompte est déjà en cours, ne rien faire
