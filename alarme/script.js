@@ -57,7 +57,7 @@ function start2() {
                 link = "https://serveur-prive.net/minecraft/sunaris-semirp-claims-economie-unique-entreprises-jobs-alliages-10379/vote";
                 open(link,"_blank")
             }
-            alert("timer fini");
+            alert("Minuteur de serveur-prive.net terminer");
             clearInterval(repete2); //stop la boucle
             isDecompteEnCours2 = false;
         }
@@ -96,7 +96,7 @@ function start3() {
                 link = "https://serveur-minecraft.com/2833";
                 open(link,"_blank")
             }
-            alert("timer fini");
+            alert("Minuteur de serveur-minecraft.com terminer");
             clearInterval(repete3); //stop la boucle
             isDecompteEnCours3 = false;
         }
@@ -135,7 +135,7 @@ function start3e() {
                 link = "https://www.liste-serveurs-minecraft.org/serveur-minecraft/sunaris-semirp-1-20-x/";
                 open(link,"_blank")
             }
-            alert("timer fini");
+            alert("Minuteur de liste-serveurs-minecraft.org terminer");
             clearInterval(repete3e); //stop la boucle
             isDecompteEnCours3e = false;
         }
@@ -174,7 +174,7 @@ function start24() {
                 link = "https://www.serveursminecraft.org/serveur/5993/";
                 open(link,"_blank")
             }
-            alert("timer fini");
+            alert("Minuteur de serveursminecraft.org terminer");
             clearInterval(repete24); //stop la boucle
             isDecompteEnCours24 = false;
         }
