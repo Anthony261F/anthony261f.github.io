@@ -3,6 +3,15 @@ var temps2 = "";
 var repete2 ="";
 const timerElement2 = document.getElementById("timer");
 let isDecompteEnCours2 = false;
+var date2 = document.getElementById("date2");
+var date_now2 = "";
+var type_2 = "0";
+
+var date_setnow2 = new Date();
+const heure_setnow2 = date_setnow2.getHours();
+const minute_setnow2 = date_setnow2.getMinutes() + 1;
+
+date2.value = heure_setnow2 + " : " + minute_setnow2;
 
 
 var datedepart3 = "";
@@ -44,13 +53,14 @@ function start2() {
     if (isDecompteEnCours2) {
         return; // Le décompte est déjà en cours, ne rien faire
       }
-
       timerElement2.innerText = "02:00:00";
     datedepart2 = Date.now();
     repete2 = setInterval(() => {
+
         dateactuelle = Date.now();
         temps2 = Math.round((dateactuelle - datedepart2) / 1000);
         temps2 = 7200 - temps2;
+      
         if (temps2 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
@@ -78,6 +88,82 @@ function stop2() {
     clearInterval(repete2); // Arrêter la boucle du décompte
     isDecompteEnCours2 = false; // Mettre la variable à false pour indiquer que le décompte est en pause
   }
+
+function valide_date2() {
+    date_now2 = new Date();
+    const heure_now2 = date_now2.getHours();
+    const minute_now2 = date_now2.getMinutes();
+    const date_choisi2 = date2.value;
+
+    // Sépare les heures et les minutes de la valeur
+    const heurestime2 = parseInt(date_choisi2.split(":")[0]);
+    const minutestime2 = parseInt(date_choisi2.split(":")[1]);
+
+    // Convertit les heures et les minutes en secondes
+    const heuresEnSecondestime_2 = heurestime2 * 3600;
+    const minutesEnSecondestime_2 = minutestime2 * 60;
+
+    // Ajoute les secondes totales
+    const secondesTotales_2 = heuresEnSecondestime_2 + minutesEnSecondestime_2;
+
+   // Convertit les heures et les minutes en secondes
+    const heuresEnSecondestimenow_2 = heure_now2 * 3600;
+    const minutesEnSecondestimenow_2 = minute_now2 * 60;
+
+    const secondesTotalesnow_2 = heuresEnSecondestimenow_2 + minutesEnSecondestimenow_2;
+
+    const seconde_fin2 = secondesTotales_2 - secondesTotalesnow_2;
+ 
+  
+    
+
+    if (isDecompteEnCours2) {
+      return; // Le décompte est déjà en cours, ne rien faire
+    }
+    const heuresset2 = Math.floor(seconde_fin2 / 3600); // Conversion en heures
+    const minutesset2 = Math.floor((seconde_fin2 % 3600) / 60); // Conversion en minutes
+    const secondesRestantesset2 = seconde_fin2 % 60; // Secondes restantes
+
+    const heuresset2_2 = heuresset2 < 10 || heuresset2 === 0 ? "0" + heuresset2 : heuresset2;
+    const minutesset2_2 = minutesset2 < 10 || minutesset2 === 0 ? "0" + minutesset2 : minutesset2;
+    const secondesRestantesset2_2 = secondesRestantesset2 < 10 || secondesRestantesset2 === 0 ? "0" + secondesRestantesset2 : secondesRestantes2;
+
+    timerElement2.innerText = `${heuresset2_2}:${minutesset2_2}:${secondesRestantesset2_2}`;
+
+  datedepart2 = Date.now();
+  repete2 = setInterval(() => {
+
+      dateactuelle = Date.now();
+      temps2 = Math.round((dateactuelle - datedepart2) / 1000);
+      temps2 = seconde_fin2 - temps2;
+    
+      if (temps2 < 1) {
+          audio.play();
+          if (vouvertureauto == 1) {
+              link = "https://serveur-prive.net/minecraft/sunaris-semirp-claims-economie-unique-entreprises-jobs-alliages-10379/vote";
+              open(link,"_blank")
+          }
+          alert("Minuteur de serveur-prive.net terminer");
+          clearInterval(repete2); //stop la boucle
+          isDecompteEnCours2 = false;
+      }
+      const heures2 = Math.floor(temps2 / 3600); // Conversion en heures
+      const minutes2 = Math.floor((temps2 % 3600) / 60); // Conversion en minutes
+      const secondesRestantes2 = temps2 % 60; // Secondes restantes
+
+      const heures2_2 = heures2 < 10 || heures2 === 0 ? "0" + heures2 : heures2;
+      const minutes2_2 = minutes2 < 10 || minutes2 === 0 ? "0" + minutes2 : minutes2;
+      const secondesRestantes2_2 = secondesRestantes2 < 10 || secondesRestantes2 === 0 ? "0" + secondesRestantes2 : secondesRestantes2;
+
+      timerElement2.innerText = `${heures2_2}:${minutes2_2}:${secondesRestantes2_2}`;
+    }, 1000) //1 secondes
+    isDecompteEnCours2 = true;
+}
+
+function reset_date2() {
+    clearInterval(repete2); // Arrêter la boucle du décompte
+    isDecompteEnCours2 = false; // Mettre la variable à false pour indiquer que le décompte est en pause
+}
 
 function start3() {
     if (isDecompteEnCours3) {
