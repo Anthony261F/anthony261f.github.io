@@ -91,6 +91,10 @@ function ouvrirTout() {
     <span>Démarer tout les minuteurs : </span><br><button onclick="startTout()">Start</button>
   </div>
   <div class="tout">
+    <h3 style="font-weight:bold">Tout démarer</h3>
+    <span>Démarer tout les minuteurs personalisés : </span><br><button onclick="startTouttime()">Start</button>
+  </div>
+  <div class="tout">
     <h3 style="font-weight:bold">Tout arréter</h3>
     <span>Arréter tout les minuteurs : </span><br><button onclick="stopTout()">Stop</button>
   </div>
@@ -115,6 +119,8 @@ function ouvrirTout() {
       <button onclick="parent.ouvrir3H()">Ouvrir</button>
       <button onclick="start3()">Start</button>
       <button onclick="stop3()">Stop</button>
+      <br><hr>
+      <input type="time" value="00:00" id="date3"> <button onclick="valide_date3()">✔</button> <button onclick="reset_date3()">✖</button>
     </div>
 
     <br style="clear:both;">
@@ -125,6 +131,8 @@ function ouvrirTout() {
       <button onclick="parent.ouvrir3He()">Ouvrir</button>
       <button onclick="start3e()">Start</button>
       <button onclick="stop3e()">Stop</button>
+      <br><hr>
+      <input type="time" value="00:00" id="date3e"> <button onclick="valide_date3e()">✔</button> <button onclick="reset_date3e()">✖</button>
     </div>
 
     <div class="gauche"> <!-- Vote 24 heures-->
@@ -133,6 +141,8 @@ function ouvrirTout() {
       <button onclick="parent.ouvrir24H()">Ouvrir</button>
       <button onclick="start24()">Start</button>
       <button onclick="stop24()">Stop</button>
+      <br><hr>
+      <input type="time" value="00:00" id="date24"> <button onclick="valide_date24()">✔</button> <button onclick="reset_date24()">✖</button>
     </div>
   </div>
 
