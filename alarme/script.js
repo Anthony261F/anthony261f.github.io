@@ -23,8 +23,9 @@ var date3 = document.getElementById("date3");
 var date_now3 = "";
 
 var date_setnow3 = new Date();
-const heure_setnow3 = date_setnow3.getHours();
-const minute_setnow3 = date_setnow3.getMinutes() + 1;
+const heure_setnow3 = date_setnow3.getHours() < 10 || date_setnow3.getHours() === 0 ? "0" + date_setnow3.getHours() : date_setnow3.getHours();
+var minute_1_3 = date_setnow3.getMinutes() + 1;
+const minute_setnow3 = minute_1_3 < 10 || minute_1_3 === 0 ? "0" + minute_1_3 : minute_1_3;
 
 date3.value = heure_setnow3 + ":" + minute_setnow3;
 
@@ -38,8 +39,9 @@ var date3e = document.getElementById("date3e");
 var date_now3e = "";
 
 var date_setnow3e = new Date();
-const heure_setnow3e = date_setnow3e.getHours();
-const minute_setnow3e = date_setnow3e.getMinutes() + 1;
+const heure_setnow3e = date_setnow3e.getHours() < 10 || date_setnow3e.getHours() === 0 ? "0" + date_setnow3e.getHours() : date_setnow3e.getHours();
+var minute_1_3e = date_setnow3e.getMinutes() + 1;
+const minute_setnow3e = minute_1_3e < 10 || minute_1_3e === 0 ? "0" + minute_1_3e : minute_1_3e;
 
 date3e.value = heure_setnow3e + ":" + minute_setnow3e;
 
@@ -53,8 +55,9 @@ var date24 = document.getElementById("date24");
 var date_now24 = "";
 
 var date_setnow24 = new Date();
-const heure_setnow24 = date_setnow24.getHours();
-const minute_setnow24 = date_setnow24.getMinutes() + 1;
+const heure_setnow24 = date_setnow24.getHours() < 10 || date_setnow24.getHours() === 0 ? "0" + date_setnow24.getHours() : date_setnow24.getHours();
+var minute_1_24 = date_setnow24.getMinutes() + 1;
+const minute_setnow24 = minute_1_24 < 10 || minute_1_24 === 0 ? "0" + minute_1_24 : minute_1_24;
 
 date24.value = heure_setnow24 + ":" + minute_setnow24;
 
