@@ -75,8 +75,8 @@ function startTout() {
 function startTouttime() {
   valide_date2();
   valide_date3();
- // start3e();
- // start24();
+  valide_date3e();
+  valide_date24();
 }
 
 function stopTout() {
