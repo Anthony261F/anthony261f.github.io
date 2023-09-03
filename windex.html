@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="wstyle.css">
 
 </head>
-<body style="display:flex; margin:0px; background-color: yellow;">
+<body style="display:flex; margin:0px; background-color: rgb(97, 97, 89);">
 <div id="fond" style="margin:0px; padding:0px; height:800px; width:2000px; background-color: aqua; position:fixed; z-index: 1000;"></div>
 <div id="fond2" style="position:fixed; text-align: center; z-index: 2000;" class="chat">
     <h3>Entrez votre nom</h3>
     <div class="formulaire" >
         <input value="" type="text" id="nom" placeholder="Entrez votre nom ici">
-        <button onclick="envoie_nom()">Ok</button>
+        <button onclick="envoie_nom()">Validé</button>
     </div>
 </div>
 <button onclick="openchat()">💬</button>
-<div id="chat" style="background-color: coral; padding: 25px; border-radius: 20px; margin-top: 20px; text-align: center; border:solid;">
-    <h3>Nom : <span id="renom">...</span></h3><button style="background-color: red; padding: 10px; border-radius: 15px;" onclick="deco()">Déconexion</button><br><br>
+<div id="chat" style="background-color: rgb(129, 0, 0); padding: 25px; border-radius: 20px; margin-top: 20px; text-align: center; border:solid;">
+    <h3>Nom : <span id="renom">...</span></h3><button style="background-color: rgb(9, 255, 0); padding: 10px; border-radius: 15px;" onclick="deco()">Déconexion</button><br><br>
     <div id="messages" style="text-align: left;">
         <!-- Les messages seront affichés ici -->
     </div>
