@@ -207,19 +207,19 @@ function start3() {
         return; // Le décompte est déjà en cours, ne rien faire
       }
 
-      timerElement3.innerText = "03:00:00";
+      timerElement3.innerText = "02:00:00";
     datedepart3 = Date.now();
     repete3 = setInterval(() => {
         dateactuelle = Date.now();
         temps3 = Math.round((dateactuelle - datedepart3) / 1000);
-        temps3 = 10800 - temps3;
+        temps3 = 7200 - temps3;
         if (temps3 < 1) {
             audio.play();
             if (vouvertureauto == 1) {
-                link = "https://serveur-minecraft.com/2833";
+                link = "https://top-serveurs.net/minecraft/vote/sunaris";
                 open(link,"_blank")
             }
-            alert("Minuteur de serveur-minecraft.com terminer");
+            alert("Minuteur de top-serveurs.net terminer");
             clearInterval(repete3); //stop la boucle
             isDecompteEnCours3 = false;
         }
@@ -290,10 +290,10 @@ function stop3() {
     if (temps3 < 1) {
         audio.play();
         if (vouvertureauto == 1) {
-            link = "https://serveur-minecraft.com/2833";
+            link = "https://top-serveurs.net/minecraft/vote/sunaris";
             open(link,"_blank")
         }
-        alert("Minuteur de serveur-minecraft.com terminer");
+        alert("Minuteur de top-serveurs.net terminer");
         clearInterval(repete3); //stop la boucle
         isDecompteEnCours3 = false;
     }
